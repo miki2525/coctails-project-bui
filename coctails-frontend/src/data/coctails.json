@@ -58,204 +58,163 @@
   {
     "id": 2,
     "name": "Roy Rogers",
-    "image": "../coctails-frontend/src/data/images/royRogers.jpg",
+    "image": "/royRogers.jpg",
     "type": "Bezlkoholowy",
     "glass": "Highball",
     "ratings": [
       5,
       5,
-      5,
-      5,
-      5,
+      4,
+      4,
+      4,
       5
     ],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Cola",
+        "amount": "180",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Grenadyna",
+        "amount": "5",
         "measurement": "ml"
       },
       {
-        "name": "Kruszony lód",
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      },
+      {
+        "name": "Wiśnia Maraschino",
         "amount": "",
         "measurement": ""
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Lód wkładamy do szklanki, a następnie wlewamy odrobinę grenadyny.",
+      "W kolejnym kroku wlewamy cole.",
+      "Całość dekorujemy wiśnią Maraschino.",
+      "Przed wypiciem mieszamy."
     ]
   },
   {
     "id": 3,
-    "name": "Mojito",
-    "image": "",
-    "type": "Alkoholowy",
+    "name": "Shirley Temple",
+    "image": "/shirleyTemple.jpg",
+    "type": "Bezalkoholowy",
     "glass": "Highball",
     "ratings": [
       5,
+      3,
       5,
+      4,
       5,
-      5,
-      5,
-      5
+      1
     ],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Ginger",
+        "amount": "80",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Lemon-lime soda",
+        "amount": "80",
         "measurement": "ml"
       },
       {
-        "name": "Kruszony lód",
+        "name": "Grenadyna ",
+        "amount": "5",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      },
+      {
+        "name": "Wiśnia Maraschino",
         "amount": "",
         "measurement": ""
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Lód wkładamy do szklanki, a następnie wlewamy odrobinę grenadyny.",
+      "W kolejnym kroku wlewamy równe ilości (u nas 80ml) Lemon-lime soda (np. sprite) oraz Ginger ale.",
+      "Dekorujemy wiśnią Maraschino.",
+      "Przed wypiciem mieszamy."
     ]
   },
   {
     "id": 4,
-    "name": "Mojito",
-    "image": "",
+    "name": "Margarita",
+    "image": "/margarita.jpg",
     "type": "Alkoholowy",
-    "glass": "Highball",
+    "glass": "Margarita",
     "ratings": [
       5,
+      4,
+      4,
       5,
-      5,
-      5,
-      5,
+      4,
       5
     ],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Tequila",
+        "amount": "40",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Likier Triple Sec",
+        "amount": "20",
         "measurement": "ml"
       },
       {
-        "name": "Kruszony lód",
-        "amount": "",
-        "measurement": ""
+        "name": "Sok z cytryny",
+        "amount": "15",
+        "measurement": "ml"
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Do shakera wrzucić kostki lodu.",
+      "Wlać alkohol.",
+      "Wlać sok z cytryny",
+      "Zamieszać.",
+      "Brzeg kieliszka koktajlowego zamoczyć w soku z cytryny, a następnie otoczyć solą.",
+      "Wlać zawartość shakera."
     ]
   },
   {
     "id": 5,
-    "name": "Mojito",
-    "image": "",
+    "name": "Pina Colada",
+    "image": "/pinacolada.jpg",
     "type": "Alkoholowy",
-    "glass": "Highball",
+    "glass": "Hurricane",
     "ratings": [
       5,
       5,
       5,
       5,
-      5,
-      5
+      4,
+      4
     ],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Rum",
+        "amount": "40",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Mleczko kokosowe",
+        "amount": "40",
         "measurement": "ml"
+      },
+      {
+        "name": "Ananas",
+        "amount": "5",
+        "measurement": "plastrów"
       },
       {
         "name": "Kruszony lód",
@@ -264,19 +223,19 @@
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Ananasa kroimy w mniejsze kawałki, wrzucamy do blendera.",
+      "Dodajemy kruszony lód.",
+      "Dodajemy mleko kokosowe.",
+      "Dodajemy rum.",
+      "Miksujemy."
     ]
   },
   {
     "id": 6,
-    "name": "Mojito",
-    "image": "",
+    "name": "Sex on the beach",
+    "image": "/sexOnTheBeach.jpg",
     "type": "Alkoholowy",
-    "glass": "Highball",
+    "glass": "Hurricane",
     "ratings": [
       5,
       5,
@@ -287,50 +246,44 @@
     ],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Wódka",
+        "amount": "20",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Likier brzoskwiniowy",
+        "amount": "20",
         "measurement": "ml"
       },
       {
-        "name": "Kruszony lód",
+        "name": "Sok żurawinowy",
+        "amount": "100",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok pomarańczowy",
+        "amount": "100",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
         "amount": "",
         "measurement": ""
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Do szklanki typu należy włożyć kilka kostek lodu.",
+      "Następnie wlać do środka wódkę, sok pomarańczowy i żurawinowy.",
+      "Całość delikatnie wymieszać.",
+      "Gotowy drink można serwować z dekoracją w postaci kawałka pomarańczy."
     ]
   },
   {
     "id": 7,
-    "name": "Mojito",
-    "image": "",
+    "name": "Wściekły pies",
+    "image": "/wscieklyPies.jpg",
     "type": "Alkoholowy",
-    "glass": "Highball",
+    "glass": "Shot",
     "ratings": [
       5,
       5,
@@ -341,166 +294,117 @@
     ],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
-        "measurement": "ml"
-      },
-      {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
+        "name": "Wódka",
         "amount": "25",
         "measurement": "ml"
       },
       {
-        "name": "Kruszony lód",
-        "amount": "",
-        "measurement": ""
+        "name": "Sok malinowy lub porzeczkowy",
+        "amount": "15",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sos Tabasco",
+        "amount": "3-4",
+        "measurement": "krople"
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Zimną wódkę wlej do kieliszka.",
+      "Po kilku chwilach dodaj sok malinowy lub sok porzeczkowy.",
+      "Na koniec dodaj kilka kropel sosu tabasco.",
+      "Drinka nie mieszaj, poczekaj, aż sok sam opadnie na dno."
     ]
   },
   {
     "id": 8,
-    "name": "Mojito",
-    "image": "",
+    "name": "Krwawa Mary",
+    "image": "/krwawaMary.jpg",
     "type": "Alkoholowy",
     "glass": "Highball",
-    "ratings": [
-      5,
-      5,
-      5,
-      5,
-      5,
-      5
-    ],
+    "ratings": [],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Wódka",
+        "amount": "40",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
+        "name": "Sok pomidorowy",
+        "amount": "80",
+        "measurement": "ml"
       },
       {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
+        "name": "Sok z cytryny",
+        "amount": "1",
         "measurement": "łyżeczki"
       },
       {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
+        "name": "Sos Worcestershire",
+        "amount": "0.5",
+        "measurement": "łyżeczki"
       },
       {
-        "name": "Woda gazowana",
-        "amount": "25",
-        "measurement": "ml"
+        "name": "Sól",
+        "amount": "",
+        "measurement": ""
       },
       {
-        "name": "Kruszony lód",
+        "name": "Pieprz",
         "amount": "",
         "measurement": ""
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Do szklanki wrzucić kilka kostek lodu.",
+      "Wlać wódkę.",
+      "Dodać sok pomidorowy.",
+      "Dodać sok z cytryny.",
+      "Dodać sos Worcestershire.",
+      "Dodać przyprawy",
+      "Wymieszać.",
+      "Dopełnić resztą soku pomidorowego."
     ]
   },
   {
     "id": 9,
-    "name": "Mojito",
-    "image": "",
-    "type": "Alkoholowy",
-    "glass": "Highball",
-    "ratings": [
-      5,
-      5,
-      5,
-      5,
-      5,
-      5
-    ],
+    "name": "Frog",
+    "image": "/frog.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Lowball",
+    "ratings": [],
     "ingredients": [
       {
-        "name": "Biały Rum",
-        "amount": "50",
+        "name": "Sok grejfrutowy",
+        "amount": "80",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
+        "name": "Sok ananasowy",
+        "amount": "60",
+        "measurement": "mk"
       },
       {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Bezalkoholowe blue curacao",
+        "amount": "40",
         "measurement": "ml"
-      },
-      {
-        "name": "Kruszony lód",
-        "amount": "",
-        "measurement": ""
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Do shakera wlej sok grejfrutowy.",
+      "Dodaj sok ananasowy.",
+      "Dodaj blue curacao.",
+      "Wymieszaj.",
+      "Przelej do szklanki."
     ]
   },
   {
     "id": 10,
     "name": "Mojito Wirgin",
-    "image": "",
+    "image": "/mojitoWirgin.jpg",
     "type": "Bezalkoholowy",
     "glass": "Highball",
-    "ratings": [
-      5,
-      5,
-      5,
-      5,
-      5,
-      5
-    ],
+    "ratings": [],
     "ingredients": [
       {
         "name": "Sok z limonki",
@@ -524,8 +428,8 @@
       },
       {
         "name": "Kruszony lód",
-        "amount": "10",
-        "measurement": "kostek"
+        "amount": "",
+        "measurement": ""
       }
     ],
     "steps": [
@@ -538,56 +442,40 @@
   },
   {
     "id": 11,
-    "name": "Mojito",
-    "image": "",
+    "name": "Kamikadze",
+    "image": "/kamikadze.jpg",
     "type": "Alkoholowy",
-    "glass": "Highball",
-    "ratings": [
-      5,
-      5,
-      5,
-      5,
-      5,
-      5
-    ],
+    "glass": "Shot",
+    "ratings": [],
     "ingredients": [
       {
-        "name": "Biały Rum",
+        "name": "Wódka",
         "amount": "50",
         "measurement": "ml"
       },
       {
-        "name": "Limonka",
-        "amount": "0.5",
-        "measurement": "szt"
-      },
-      {
-        "name": "Cukierz Trzcinowy",
-        "amount": "2",
-        "measurement": "łyżeczki"
-      },
-      {
-        "name": "Mięta",
-        "amount": "kilka",
-        "measurement": "listków"
-      },
-      {
-        "name": "Woda gazowana",
-        "amount": "25",
+        "name": "Blue curacao",
+        "amount": "50",
         "measurement": "ml"
       },
       {
-        "name": "Kruszony lód",
+        "name": "Sok z cytryny lub limonki",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
         "amount": "",
         "measurement": ""
       }
     ],
     "steps": [
-      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
-      "Dodać miód i ponownie zamieszać.",
-      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
-      "Włożyć resztę lodu.",
-      "Drink podawać schłodzony."
+      "Do schłodzonego shakera wlewamy wódkę.",
+      "Dodajemy blue curacao.",
+      "Dodajemy sok z cytryny.",
+      "Dodajemy lód.",
+      "Energicznie potrząsamy całością.",
+      "Przelewamy do kieliszków przy pomocy sitka, tak by kostki lodu nie wpadły do środka."
     ]
   },
   {
