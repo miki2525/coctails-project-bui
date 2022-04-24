@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Mojito",
-    "image": "../coctails-frontend/src/data/images/mojito.jpg",
+    "image": "/mojito.jpg",
     "type": "Alkoholowy",
     "glass": "Highball",
     "ratings": [
