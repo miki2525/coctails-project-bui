@@ -1,0 +1,1079 @@
+[
+  {
+    "id": 1,
+    "name": "Mojito",
+    "image": "../coctails-frontend/src/data/images/mojito.jpg",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Limonkę wyszorować, pokroić na ćwiartki i wrzucić do szklanki.",
+      "Zasypać cukrem i dokładnie ugnieść.",
+      "Następnie dodać listki mięty i znowu ugnieść.",
+      "Do połowy wysokości szklanki dodać lód, a następnie rum i znów lód.",
+      "Zamieszać.",
+      "Na wierzch dodać wodę gazowaną i delikatnie zmieszać.",
+      "Szklankę udekorować limonką i listkami mięty."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Roy Rogers",
+    "image": "../coctails-frontend/src/data/images/royRogers.jpg",
+    "type": "Bezlkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mojito Wirgin",
+    "image": "",
+    "type": "Bezalkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Sok z limonki",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Miód wielokwiatowy",
+        "amount": "1",
+        "measurement": "łyżka"
+      },
+      {
+        "name": "Mięta",
+        "amount": "6-7",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "150",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "10",
+        "measurement": "kostek"
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Mojito",
+    "image": "",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  }
+]
