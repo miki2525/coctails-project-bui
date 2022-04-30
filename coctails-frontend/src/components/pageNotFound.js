@@ -13,7 +13,7 @@ export default function PageNotFound() {
                 Odleciałeś pod zły adres URL <br/> albo strona już nie istnieje.
             </p>
             <div align="center">
-                <NavLink classname="btn-back" to="/">Wróć na Ziemię</NavLink>
+                <NavLink className="btn-back" to="/">Wróć na Ziemię</NavLink>
             </div>
             <img src="https://assets.codepen.io/1538474/astronaut.svg" className="astronaut"/>
             <img src="https://assets.codepen.io/1538474/spaceship.svg" className="spaceship"/>

@@ -3,6 +3,7 @@ import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
 import NavigationBar from "./components/navigationBar";
 import Comp from "./components/comp";
 import PageNotFound from "./components/pageNotFound";
+import DisplayCoctails from "./components/displayCoctails";
 
 function App() {
 
@@ -11,8 +12,8 @@ function App() {
             <NavigationBar/>
             <div>
                 <Routes>
-                    <Route path="/" exact element={<Comp/>}/>
-                    <Route exact path="/about" element={<Comp/>}/>
+                    <Route path="/" exact element={<DisplayCoctails/>}/>
+                    <Route exact path="/about" element={<DisplayCoctails/>}/>
 
                     {/*NOT FOUND*/}
                     <Route path="*" element={<Navigate to="/404"/>}/>

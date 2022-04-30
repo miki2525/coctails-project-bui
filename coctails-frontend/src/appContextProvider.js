@@ -6,8 +6,8 @@ const AppContext = createContext();
 export const  useAppCtx = () => useContext(AppContext);
 
 export default function AppContextProvider({children}) {
-    const [coctails, setCoctails] = useState({});
-    const [comments, setComments] = useState({});
+    const [coctails, setCoctails] = useState(coctailsData);
+    const [comments, setComments] = useState(commentsData);
 
     useEffect(() => {
         setCoctails(coctailsData);
@@ -17,7 +17,7 @@ export default function AppContextProvider({children}) {
     const save = (coctailsToSave, commentsToSave) => {
         setCoctails(coctailsToSave);
         setComments(commentsToSave)
-        ////call API + ovveride coctails,json + comments.json
+        ////TODO call API + ovveride coctails,json + comments.json
     }
 
     return (
