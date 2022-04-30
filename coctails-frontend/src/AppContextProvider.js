@@ -2,8 +2,8 @@ import React, {createContext, useState, useContext, useEffect} from 'react';
 import coctailsData from './data/coctails.json';
 import commentsData from './data/comments.json';
 
-const appContext = createContext();
-export const getAppCtx = () => useContext(appContext);
+const AppContext = createContext();
+export const  useAppCtx = () => useContext(AppContext);
 
 export default function AppContextProvider({children}) {
     const [coctails, setCoctails] = useState({});
@@ -21,10 +21,10 @@ export default function AppContextProvider({children}) {
     }
 
     return (
-        <FormContext.Provider
+        <AppContext.Provider
             value={{coctails, setCoctails, comments, setComments, save}}
         >
             {children}
-        </FormContext.Provider>
+        </AppContext.Provider>
     );
 }

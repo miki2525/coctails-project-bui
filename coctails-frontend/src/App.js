@@ -1,18 +1,26 @@
-import React from "react";
-import {Router, Route, browserHistory} from 'react-router'
-import NotFound from "./components/NotFound";
+import React from "react"
+import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
+import {Redirect} from "react-router";
+import NavigationBar from "./components/NavigationBar";
+import Comp from "./components/Comp";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
+
     return (
-        <Router history={browserHistory}>
-            <Route component={LayoutWrapper}>
-                <Switch>
-                    <Route path="/" component={DisplayCoctails}/>
-                    <Route path="/about" component={About}/>
-                    <Route component={NotFound}/>
-                </Switch>
-            </Route>
-        </Router>
+        <BrowserRouter>
+            <NavigationBar/>
+            <div>
+                <Routes>
+                    <Route path="/" exact element={<Comp/>}/>
+                    <Route exact path="/about" element={<Comp/>}/>
+
+                    {/*NOT FOUND*/}
+                    <Route path="*" element={<Navigate to="/404"/>}/>
+                    <Route path="/404" element={<PageNotFound/>}/>
+                </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 
