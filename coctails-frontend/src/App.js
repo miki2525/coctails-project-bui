@@ -1,6 +1,5 @@
 import React from "react"
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
-import {Redirect} from "react-router";
 import NavigationBar from "./components/NavigationBar";
 import Comp from "./components/Comp";
 import PageNotFound from "./components/PageNotFound";

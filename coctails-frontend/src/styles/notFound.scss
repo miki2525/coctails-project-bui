@@ -23,7 +23,7 @@
   }
 
   body{
-    background-image: url('https://assets.codepen.io/1538474/star.svg'),linear-gradient(to bottom, #05007A, #4D007D);
+    background-color: black;
     height: 100%;
     margin: 0;
     background-attachment: fixed;
@@ -61,7 +61,7 @@
   }
 
   .title{
-    color: white;
+    color: black;
     font-family: $nunito-font;
     font-weight: 600;
     text-align: center;
@@ -74,7 +74,7 @@
   }
 
   .subtitle{
-    color: white;
+    color: black;
     font-family: $nunito-font;
     font-weight: 400;
     text-align: center;
@@ -85,7 +85,7 @@
 
   .btn-back{
     border: 1px solid white;
-    color: white;
+    color: black;
     height: 5vmin;
     padding: 12px;
     font-family: $nunito-font;
@@ -124,4 +124,5 @@
       bottom: 18vmin;
     }
   }
+
 }
