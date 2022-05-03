@@ -1,12 +1,16 @@
 import React from "react";
-import Ingredient from "./Ingredient";
+import Ingredient from "./ingredient";
+import '../styles/ingredients.scss'
 
-export default function IngredientsList({ list }) {
+export default function IngredientsList({list}) {
     return (
-        <ul className="ingredients">
-            {list.map((ingredient, i) => (
-                <Ingredient key={i} {...ingredient} />
-            ))}
-        </ul>
+        <div className="ingredientsContainer">
+            <h3>Składniki</h3>
+            <ul className="ingredients">
+                {list.map((ingredient, i) => (
+                    <Ingredient key={i} {...ingredient} />
+                ))}
+            </ul>
+        </div>
     );
 }
