@@ -3,7 +3,7 @@ import coctailsData from './data/coctails.json';
 import commentsData from './data/comments.json';
 
 const AppContext = createContext();
-export const  useAppCtx = () => useContext(AppContext);
+export const useAppCtx = () => useContext(AppContext);
 
 export default function AppContextProvider({children}) {
     const [coctails, setCoctails] = useState(coctailsData);
@@ -15,7 +15,7 @@ export default function AppContextProvider({children}) {
         setComments(commentsData)
     }, []);
 
-    const resetCoctails = () =>{
+    const resetCoctails = () => {
         setCoctails(coctailsData);
     }
 
@@ -40,10 +40,21 @@ export default function AppContextProvider({children}) {
         saveCoctails(updatedRateCoctails);
     }
 
+    const getCoctailDetails = (id) => {
+        return coctails.find((coctail) => coctail.id === id);
+    }
+
+    const getComments = (id) => {
+        return comments.filter((comment) => comment.id_coctail === id);
+    }
+
 
     return (
         <AppContext.Provider
-            value={{coctails, coctailsSearch, setCoctails, resetCoctails, comments, setComments, saveCoctails, saveComments, rateIt}}
+            value={{
+                coctails, coctailsSearch, setCoctails, resetCoctails, comments, setComments, saveCoctails,
+                saveComments, rateIt, getCoctailDetails, getComments
+            }}
         >
             {children}
         </AppContext.Provider>

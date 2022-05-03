@@ -3,16 +3,16 @@ import Rates from "./rates";
 import IngredientsList from "./ingredientsList";
 import Instructions from "./instructions";
 import Comments from "./comments";
+import {useNavigate} from 'react-router-dom'
 import '../styles/coctail.scss'
 
-export default function Coctail({id, name, image, type, glass, ratings, ingredients, steps, comments}) {
-    const [showDetails, setVisibility] = useState(false);
+export default function Coctail({id, name, image, type}) {
 
+    let navigate = useNavigate();
 
     const handleDetails = (id) => {
-        var btn = document.getElementById("btnDetails#" + id);
-        btn.innerText === "SZCZEGÓŁY" ? btn.innerText = "ZWIŃ" : btn.innerText = "SZCZEGÓŁY"
-        setVisibility(!showDetails);
+        let path = "/coctail/" + id;
+        navigate(path);
     }
 
     return (
@@ -23,13 +23,6 @@ export default function Coctail({id, name, image, type, glass, ratings, ingredie
             <button id={"btnDetails#" + id} className="btn btn-info btnDetails"
                     onClick={() => handleDetails(id)}>SZCZEGÓŁY
             </button>
-            {showDetails && <>
-                <Rates id={id} ratings={ratings}/>
-                <h3 className="glass">Szkło: {glass}</h3>
-                <IngredientsList list={ingredients}/>
-                <Instructions steps={steps}/>
-                <Comments comments={comments}/>
-            </>}
         </section>
     );
 }

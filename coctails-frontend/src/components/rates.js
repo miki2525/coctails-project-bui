@@ -12,8 +12,6 @@ export default function Rates({id, ratings}) {
         return Number.isNaN(av) ? 'Brak oceny. Bądź pierwszy!' : av;
     }
 
-    console.log(ratings);
-
     return (
         <div className="ratesContainer">
             <h3>Ocena</h3>

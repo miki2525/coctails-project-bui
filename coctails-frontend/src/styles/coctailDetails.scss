@@ -1,0 +1,43 @@
+.coctailDetails {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 25px;
+
+  //IMG
+  .imgCoctail {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  //RATINGS
+  .ratesContainer {
+    margin-top: 20px;
+
+    .stars {
+      margin-top: -10px;
+    }
+
+    .avgRateText {
+      font-size: small;
+      margin-bottom: 10px;
+    }
+  }
+
+  //INGREDIENTS
+  .ingredientsContainer {
+    margin-top: 10px;
+  }
+
+  //COMMENTS
+  .commentsContainer {
+    :not(:first-child) :not(p), .text {
+      background-color: lightgray;
+    }
+
+    .date {
+      font-size: smaller;
+      font-family: Corbel;
+    }
+  }
+}

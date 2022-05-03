@@ -16,10 +16,10 @@ export default function Comments({comments}) {
             {comments.sort((a, b) => {
                 return a.date.localeCompare(b.date)
             })
-                .map((comment, i) => (
-                    <div>
-                        <div key={i} className="date">{comment.date}</div>
-                        <p key={i} className="text">{comment.content}</p>
+                .map((comment,i) => (
+                    <div key={i}>
+                        <div className="date">{comment.date}</div>
+                        <p className="text">{comment.content}</p>
                     </div>
                 ))}
         </div>

@@ -17,8 +17,7 @@ export default function DisplayCoctails() {
             {
                 coctails.map((coctail) => {
                         return (
-                            <Coctail  {...coctail} key={coctail.name}
-                                      comments={comments.filter((comment) => comment.id_coctail === coctail.id)}/>
+                            <Coctail  {...coctail} key={coctail.name}/>
                         )
                     }
                 )}

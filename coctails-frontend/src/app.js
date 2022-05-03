@@ -2,8 +2,9 @@ import React from "react"
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
 import NavigationBar from "./components/navigationBar";
 import PageNotFound from "./components/pageNotFound";
-import DisplayCoctails from "./components/displayCoctails";
 import About from "./components/about";
+import DisplayCoctails from "./components/displayCoctails";
+import DisplayCoctailDetails from "./components/displayCoctailDetails";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
             <div>
                 <Routes>
                     <Route path="/" exact element={<DisplayCoctails/>}/>
+                    <Route path="/coctail/:id" exact element={<DisplayCoctailDetails/>}/>
                     <Route exact path="/about" element={<About/>}/>
 
                     {/*NOT FOUND*/}
