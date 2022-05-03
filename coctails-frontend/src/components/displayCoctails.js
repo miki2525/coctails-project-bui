@@ -6,6 +6,12 @@ import '../styles/coctailWrapper.scss'
 export default function DisplayCoctails() {
     const {coctails, comments} = useAppCtx();
 
+    if (coctails.length < 1){
+        return (
+          <div> Lista jest pusta </div>
+        );
+    }
+
     return (
         <div className="coctailWrapper">
             {

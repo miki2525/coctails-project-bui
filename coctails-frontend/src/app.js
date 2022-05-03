@@ -1,7 +1,6 @@
 import React from "react"
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
 import NavigationBar from "./components/navigationBar";
-import Comp from "./components/comp";
 import PageNotFound from "./components/pageNotFound";
 import DisplayCoctails from "./components/displayCoctails";
 
