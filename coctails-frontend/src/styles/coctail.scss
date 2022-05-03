@@ -7,5 +7,17 @@
     height: 250px;
     object-fit: cover;
   }
+  .rates {
+    margin-top: 20px;
+
+    .stars {
+      margin-top: -10px;
+    }
+
+    .avgRateText {
+      font-size: small;
+      margin-bottom: 10px;
+    }
+  }
 
 }
