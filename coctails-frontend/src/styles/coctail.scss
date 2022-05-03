@@ -1,17 +1,19 @@
-.coctail{
+.coctail {
   border: 1px solid black;
   border-radius: 10px;
 
-  .imgCoctail{
-    width:  250px;
+  .imgCoctail {
+    width: 250px;
     height: 250px;
     object-fit: cover;
   }
 
-  .btnDetails{
+  .btnDetails {
     margin-top: 20px;
   }
-  .rates {
+
+
+  .ratesContainer {
     margin-top: 20px;
 
     .stars {
@@ -21,6 +23,17 @@
     .avgRateText {
       font-size: small;
       margin-bottom: 10px;
+    }
+  }
+
+  .ingredientsContainer {
+    margin-top: 10px;
+  }
+
+  .commentsContainer {
+    .date {
+      font-size: smaller;
+      font-family: Corbel;
     }
   }
 }

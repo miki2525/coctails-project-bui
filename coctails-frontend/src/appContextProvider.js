@@ -14,15 +14,30 @@ export default function AppContextProvider({children}) {
         setComments(commentsData)
     }, []);
 
-    const save = (coctailsToSave, commentsToSave) => {
+    const saveCoctails = (coctailsToSave) => {
         setCoctails(coctailsToSave);
-        setComments(commentsToSave)
-        ////TODO call API + ovveride coctails,json + comments.json
+        ////TODO call API + ovveride coctails,json
     }
+
+    const saveComments = (commentsToSave) => {
+        setComments(commentsToSave)
+        ////TODO call API + ovveride comments.json
+    }
+
+    const rateIt = (id, rate) => {
+        const updatedRateCoctails = coctails.map((coctail) => {
+            if (coctail.id === id) {
+                coctail.ratings.push(rate);
+            }
+            return coctail;
+        });
+        saveCoctails(updatedRateCoctails);
+    }
+
 
     return (
         <AppContext.Provider
-            value={{coctails, setCoctails, comments, setComments, save}}
+            value={{coctails, setCoctails, comments, setComments, saveCoctails, saveComments, rateIt}}
         >
             {children}
         </AppContext.Provider>

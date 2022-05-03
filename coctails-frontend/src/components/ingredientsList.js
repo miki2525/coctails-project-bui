@@ -1,6 +1,5 @@
 import React from "react";
 import Ingredient from "./ingredient";
-import '../styles/ingredients.scss'
 
 export default function IngredientsList({list}) {
     return (
