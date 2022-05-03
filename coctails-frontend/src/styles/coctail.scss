@@ -1,8 +1,10 @@
 .coctail{
+  border: 1px solid black;
+  border-radius: 10px;
 
   .imgCoctail{
-    width:  100px;
-    height: 100px;
+    width:  250px;
+    height: 250px;
     object-fit: cover;
   }
 
