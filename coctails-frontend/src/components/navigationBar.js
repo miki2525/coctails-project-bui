@@ -13,7 +13,7 @@ export default function NavigationBar() {
     return (
         <div className="NavigationBar">
             <Search/>
-            
+
             <div className="links">
             <Link to="/">Home</Link>
             <br/>

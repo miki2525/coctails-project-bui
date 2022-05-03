@@ -1,9 +1,16 @@
 import React from 'react';
 import {useAppCtx} from '../appContextProvider';
+import {useLocation} from 'react-router-dom';
 
 export default function Search() {
 
     const {coctailsSearch, setCoctails, resetCoctails} = useAppCtx();
+
+    let location = useLocation();
+
+    if(location.pathname !== '/'){
+        return null;
+    }
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -33,7 +40,7 @@ export default function Search() {
                    placeholder={"Szukaj koktajlu"}
                    onChange={event => handleClick(event)}
             />
-            <button type="reset" className="btn-success" onClick={() => handleReset()}>Resetuj</button>
+            <button type="reset" className="btn-warning" onClick={() => handleReset()}>Resetuj</button>
         </div>
     );
 }

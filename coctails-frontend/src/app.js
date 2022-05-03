@@ -3,6 +3,7 @@ import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
 import NavigationBar from "./components/navigationBar";
 import PageNotFound from "./components/pageNotFound";
 import DisplayCoctails from "./components/displayCoctails";
+import About from "./components/about";
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
             <div>
                 <Routes>
                     <Route path="/" exact element={<DisplayCoctails/>}/>
-                    <Route exact path="/about" element={<DisplayCoctails/>}/>
+                    <Route exact path="/about" element={<About/>}/>
 
                     {/*NOT FOUND*/}
                     <Route path="*" element={<Navigate to="/404"/>}/>
