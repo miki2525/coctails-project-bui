@@ -30,7 +30,11 @@
     margin-top: 10px;
   }
 
+
   .commentsContainer {
+    :not(:first-child) :not(p), .text{
+      background-color: lightgray;
+    }
     .date {
       font-size: smaller;
       font-family: Corbel;

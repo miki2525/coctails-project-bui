@@ -1,0 +1,35 @@
+.NavigationBar{
+  .search
+  {
+
+    .btnResetSearch{
+      border-radius: 20px;
+      font-weight: bold;
+    }
+    .btnResetSearch:hover, .btnResetSearch:focus {
+      outline: none;
+    }
+  }
+
+  .links{
+      overflow: hidden;
+      background-color: darkgreen;
+    .link {
+      float: right;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .link:first-child{
+      float:left;
+    }
+
+    .link:hover {
+      background-color: #111;
+    }
+
+  }
+
+}

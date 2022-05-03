@@ -1,6 +1,8 @@
 import React from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import {NavLink, useLocation} from 'react-router-dom';
 import Search from "./search";
+import '../styles/navigationBar.scss'
+import {House} from 'react-bootstrap-icons'
 
 export default function NavigationBar() {
 
@@ -15,11 +17,9 @@ export default function NavigationBar() {
             <Search/>
 
             <div className="links">
-            <Link to="/">Home</Link>
-            <br/>
-            <Link to="/about">O nas</Link>
-            <br/>
-            <Link to="/login">Zaloguj(admin)</Link>
+            <NavLink className="link" to="/"><House size={22}></House></NavLink>
+            <NavLink className="link" to="/about">O nas</NavLink>
+            <NavLink className="link" to="/login">Zaloguj(admin)</NavLink>
             </div>
         </div>
     )

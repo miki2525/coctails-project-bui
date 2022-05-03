@@ -40,7 +40,7 @@ export default function Search() {
                    placeholder={"Szukaj koktajlu"}
                    onChange={event => handleClick(event)}
             />
-            <button type="reset" className="btn-warning" onClick={() => handleReset()}>Resetuj</button>
+            <button type="reset" className="btn-warning btnResetSearch" onClick={() => handleReset()}>RESET</button>
         </div>
     );
 }

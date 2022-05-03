@@ -10,7 +10,7 @@ export default function PageNotFound() {
             <img src="https://assets.codepen.io/1538474/meteor.svg" className="meteor"/>
             <p className="title">O nieeeee!!</p>
             <p className="subtitle">
-                Odleciałeś pod zły adres URL <br/> albo strona już nie istnieje.
+                Odleciałeś na zły adres URL <br/> albo strona już nie istnieje.
             </p>
             <div align="center">
                 <NavLink className="btn-back" to="/">Wróć na Ziemię</NavLink>
