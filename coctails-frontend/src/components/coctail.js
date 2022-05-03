@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import IngredientsList from "./ingredientsList";
 import '../styles/coctail.scss'
 
 export default function Coctail({id, name, image, type, glass, ratings, ingredients, steps, comments}) {
@@ -13,6 +14,8 @@ export default function Coctail({id, name, image, type, glass, ratings, ingredie
             {showDetails && <>
                 <IngredientsList list={ingredients} />
                 {/*<Instructions steps={steps} />*/}
+                {/*{stars}*/}
+                {/*{comments}*/}
             </>}
 
         </section>
