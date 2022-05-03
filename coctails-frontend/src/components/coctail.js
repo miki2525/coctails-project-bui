@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ReactStars from 'react-rating-stars-component';
 import IngredientsList from "./ingredientsList";
 import Instructions from "./instructions";
+import Comments from "./comments";
 import '../styles/coctail.scss'
 
 export default function Coctail({id, name, image, type, glass, ratings, ingredients, steps, comments}) {
@@ -24,7 +25,7 @@ export default function Coctail({id, name, image, type, glass, ratings, ingredie
             <img className="imgCoctail" src={image}/>
             <h1>{name}</h1>
             <h3>Typ: {type}</h3>
-            <button id={"btnDetails#" + id} className="btn btn-info" onClick={() => handleDetails(id)}>SZCZEGÓŁY
+            <button id={"btnDetails#" + id} className="btn btn-info btnDetails" onClick={() => handleDetails(id)}>SZCZEGÓŁY
             </button>
             {showDetails && <>
                 <div className="rates">
@@ -40,7 +41,7 @@ export default function Coctail({id, name, image, type, glass, ratings, ingredie
                 <h3 className="glass">Szkło: {glass}</h3>
                 <IngredientsList list={ingredients}/>
                 <Instructions steps={steps}/>
-                {/*{comments}*/}
+                <Comments comments={comments} />
             </>}
 
         </section>
