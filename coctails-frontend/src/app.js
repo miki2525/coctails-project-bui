@@ -16,7 +16,7 @@ function App() {
                     <Route path="/" exact element={<DisplayCoctails/>}/>
                     <Route path="/coctail/:id" exact element={<DisplayCoctailDetails/>}/>
                     <Route exact path="/about" element={<About/>}/>
-
+                    <Route exact path="/api/adminLogin" element={<AdminLogin/>}/>
                     {/*NOT FOUND*/}
                     <Route path="*" element={<Navigate to="/404"/>}/>
                     <Route path="/404" element={<PageNotFound/>}/>
