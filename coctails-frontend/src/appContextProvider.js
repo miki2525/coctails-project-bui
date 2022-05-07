@@ -9,6 +9,7 @@ export default function AppContextProvider({children}) {
     const [coctails, setCoctails] = useState(coctailsData);
     const [comments, setComments] = useState(commentsData);
     const [coctailsSearch, setCoctailsSearch] = useState(coctailsData);
+    const [authenticated_AdminRole, setAuthenticated_AdminRole] = useState(true);
 
     useEffect(() => {
         setCoctails(coctailsData);
@@ -52,8 +53,19 @@ export default function AppContextProvider({children}) {
     return (
         <AppContext.Provider
             value={{
-                coctails, coctailsSearch, setCoctails, resetCoctails, comments, setComments, saveCoctails,
-                saveComments, rateIt, getCoctailDetails, getComments
+                coctails,
+                coctailsSearch,
+                setCoctails,
+                resetCoctails,
+                comments,
+                setComments,
+                saveCoctails,
+                saveComments,
+                rateIt,
+                getCoctailDetails,
+                getComments,
+                authenticated_AdminRole,
+                setAuthenticated_AdminRole
             }}
         >
             {children}

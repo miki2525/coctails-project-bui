@@ -9,9 +9,10 @@
     "build": "cd coctails-frontend && npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mikołaj",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3"
   }
 }

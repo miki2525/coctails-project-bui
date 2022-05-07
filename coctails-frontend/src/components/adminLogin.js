@@ -1,19 +1,35 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
+import {useAppCtx} from "../appContextProvider";
+import {Navigate} from "react-router-dom";
 
 
 export default function AdminLogin() {
     const {register, handleSubmit, formState: {errors}} = useForm();
+    const {authenticated_AdminRole, setAuthenticated_AdminRole} = useAppCtx();
+
+    if (authenticated_AdminRole){
+        return (<Navigate to="/"/>)
+    }
 
     const submit = (credentials) => {
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(credentials)
         };
         fetch('/adminLogin', requestOptions)
             .then(response => response.json()
-                .then(data => alert(data.toString())))
+                .then(data => {
+                    let errorField = document.getElementById("errorFieldAdmin");
+                    if (data) {
+                        errorField.innerText = ''
+                        setAuthenticated_AdminRole(data);
+
+                    } else {
+                        errorField.innerText = "Złe dane logowania";
+                    }
+                }))
     };
 
     return (
@@ -26,6 +42,7 @@ export default function AdminLogin() {
                 <div className="error">{errors.password?.message}</div>
                 <button value="Zaloguj">Zaloguj</button>
                 <button value="Reset" type="reset">Reset</button>
+                <div id="errorFieldAdmin"/>
             </form>
             <label>* login: admin pass: admin *</label>
         </fieldset>
