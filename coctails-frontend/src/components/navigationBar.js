@@ -21,8 +21,7 @@ export default function NavigationBar() {
             <div className="links">
             <NavLink className="link" to="/"><House size={22}></House></NavLink>
             <NavLink className="link" to="/about">O nas</NavLink>
-            <NavLink className="link" to="/login">Zaloguj</NavLink>
-                {authenticated_AdminRole &&(<div>Wyloguj</div>)}
+
             </div>
         </div>
     )

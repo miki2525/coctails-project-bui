@@ -6,11 +6,12 @@ import IngredientsList from "./ingredientsList";
 import Instructions from "./instructions";
 import Comments from "./comments";
 import '../styles/coctailDetails.scss'
+import AddComment from "./addComment";
 
 export default function DisplayCoctailDetails() {
-    // const [showDetails, setVisibility] = useState(false);
-    const {getCoctailDetails, getComments} = useAppCtx();
+    const {getCoctailDetails, getComments, authenticated_AdminRole} = useAppCtx();
     const {id} = useParams();
+
     const thisCoctail = getCoctailDetails(parseInt(id));
 
     if (thisCoctail === undefined) {
@@ -18,6 +19,11 @@ export default function DisplayCoctailDetails() {
     }
 
     const thisComments = getComments(parseInt(id));
+    const showCreator = () => {
+        let component = document.getElementById("addComment");
+        console.log(component);
+        component.style.display = 'block';
+    }
 
     return (
         <section className="coctailDetails">
@@ -29,6 +35,8 @@ export default function DisplayCoctailDetails() {
             <IngredientsList list={thisCoctail.ingredients}/>
             <Instructions steps={thisCoctail.steps}/>
             <Comments comments={thisComments}/>
+            <button onClick={() => showCreator()}>Dodaj komentarz</button>
+            <div id="addComment" ><AddComment comments={thisComments}/></div>
         </section>
     );
 }

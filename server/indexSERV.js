@@ -7,6 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const bcrypt = require("bcrypt");
 
+// crypt();
 app.use(express.static(path.resolve(__dirname, '../coctails-frontend/build')));
 app.use(express.static(process.env.PWD  + '/coctails-frontend/src/data/images'));
 app.use(bodyParser.json());
@@ -23,6 +24,11 @@ app.post('/adminLogin', (req, res) => {
     }
 });
 
+app.get('/adminLogin/logout', (req, res) => {
+    res.cookie("logout", true, {expire: 5000});
+    res.send(true);
+});
+
 ////TODO api to save coctails + comments
 
 app.listen(PORT, () => {
@@ -34,3 +40,9 @@ const validateCred = (credentials) => {
     console.log(result);
     return (credentials.login === dataAlaDB.login && result);
 }
+//
+// function crypt(){
+//    bcrypt.hash("admin",0, (err, hash)=>{
+//        console.log(hash);
+//    });
+// }
