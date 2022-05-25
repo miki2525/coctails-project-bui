@@ -26,10 +26,37 @@ export default function AppContextProvider({children}) {
         ////TODO call API + ovveride coctails,json
     }
 
-    const saveComments = (commentsToSave) => {
-        setComments(commentsToSave)
-        ////TODO call API + ovveride comments.json
-    }
+    const saveComments = (content, idCoctail, update) => {
+        const commentToSend = {content: content, idCoctail: idCoctail};
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(commentToSend)
+        };
+        //update
+        if (update) {
+            // setComments(commentsToSave)
+        }
+        //save
+        else {
+            fetch('/comments/saveComment', requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    else {
+                        console.log(response.statusText)
+                    }
+                })
+                .then(data => {
+                    if (data) {
+                        setComments(data)
+                        window.location.reload();
+                    } else {
+                        console.log("SERVER ERROR");
+                    }
+                })}
+        }
 
     const rateIt = (id, rate) => {
         const updatedRateCoctails = coctails.map((coctail) => {

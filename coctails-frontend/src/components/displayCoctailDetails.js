@@ -21,7 +21,6 @@ export default function DisplayCoctailDetails() {
     const thisComments = getComments(parseInt(id));
     const showCreator = () => {
         let component = document.getElementById("addComment");
-        console.log(component);
         component.style.display = 'block';
     }
 
@@ -36,7 +35,7 @@ export default function DisplayCoctailDetails() {
             <Instructions steps={thisCoctail.steps}/>
             <Comments comments={thisComments}/>
             <button onClick={() => showCreator()}>Dodaj komentarz</button>
-            <div id="addComment" ><AddComment comments={thisComments}/></div>
+            <div id="addComment" ><AddComment idCoctail={id}/></div>
         </section>
     );
 }
