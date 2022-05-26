@@ -6,24 +6,63 @@ const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
 
 export default function AppContextProvider({children}) {
-    const [coctails, setCoctails] = useState(coctailsData);
-    const [comments, setComments] = useState(commentsData);
-    const [coctailsSearch, setCoctailsSearch] = useState(coctailsData);
+    const [coctails, setCoctails] = useState(coctailsData); //reset to ''
+    const [comments, setComments] = useState(commentsData); //reset
+    const [coctailsSearch, setCoctailsSearch] = useState(coctailsData); //reset
+    const [loading, setLoading] = useState(false); //set to true
     const [authenticated_AdminRole, setAuthenticated_AdminRole] = useState(false);
 
     useEffect(() => {
-        setCoctails(coctailsData);
-        setComments(commentsData)
+        fetch("/api/getData")
+            .then(res => res.json())
+            .then(data => {
+                setCoctails(data.coctails);
+                setComments(data.comments);
+                setCoctailsSearch(data.coctails);
+                setLoading(false);
+            })
     }, []);
 
     const resetCoctails = () => {
-        setCoctails(coctailsData);
+        fetch("/api/getData")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setCoctails(data.coctails)
+            });
     }
 
-    const saveCoctails = (coctailsToSave) => {
-        setCoctails(coctailsToSave);
-        setCoctailsSearch(coctailsToSave);
-        ////TODO call API + ovveride coctails,json
+    const saveCoctails = (coctailToSave, update) => {
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(coctailToSave)
+        };
+        //update
+        if (update) {
+            fetch('/coctails/updateCoctail', requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        console.log(response.statusText)
+                    }
+                })
+                .then(data => {
+                    if (data) {
+                        setCoctails(data)
+                        window.location.href = "http://localhost:3001/coctail/" + coctailToSave.id;
+                    } else {
+                        console.log("SERVER ERROR");
+                    }
+                })
+        }
+        //save
+        else {
+            setCoctails(coctailToSave);
+            setCoctailsSearch(coctailToSave);
+            ////TODO call API + save coctails,json
+        }
     }
 
     const saveComments = (content, idCoctail, update) => {
@@ -43,8 +82,7 @@ export default function AppContextProvider({children}) {
                 .then(response => {
                     if (response.ok) {
                         return response.json();
-                    }
-                    else {
+                    } else {
                         console.log(response.statusText)
                     }
                 })
@@ -55,8 +93,9 @@ export default function AppContextProvider({children}) {
                     } else {
                         console.log("SERVER ERROR");
                     }
-                })}
+                })
         }
+    }
 
     const rateIt = (id, rate) => {
         const updatedRateCoctails = coctails.map((coctail) => {
@@ -85,6 +124,7 @@ export default function AppContextProvider({children}) {
                 setCoctails,
                 resetCoctails,
                 comments,
+                loading,
                 setComments,
                 saveCoctails,
                 saveComments,

@@ -1,14 +1,12 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
 import {useAppCtx} from "../appContextProvider";
-import {Navigate, useNavigate} from "react-router-dom";
+import {Navigate} from "react-router-dom";
 
 
 export default function AdminLogin() {
     const {register, handleSubmit, formState: {errors}} = useForm();
     const {authenticated_AdminRole, setAuthenticated_AdminRole} = useAppCtx();
-    let navigate = useNavigate();
-
     if (authenticated_AdminRole){
         return (<Navigate to="/"/>)
     }
@@ -26,8 +24,6 @@ export default function AdminLogin() {
                     if (data) {
                         errorField.innerText = ''
                         setAuthenticated_AdminRole(data);
-                        navigate("/")
-
                     } else {
                         errorField.innerText = "Złe dane logowania";
                     }

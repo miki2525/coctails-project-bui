@@ -17,7 +17,7 @@ export default function NavigationBar() {
     return (
         <div className="NavigationBar">
             <Search/>
-
+{/*//todo add filters*/}
             <div className="links">
             <NavLink className="link" to="/"><House size={22}></House></NavLink>
             <NavLink className="link" to="/about">O nas</NavLink>

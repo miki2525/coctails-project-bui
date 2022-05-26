@@ -1,6 +1,6 @@
 import React from 'react';
 import {useAppCtx} from '../appContextProvider';
-import {Navigate, useParams} from 'react-router-dom'
+import {Navigate, useNavigate, useParams} from 'react-router-dom'
 import Rates from "./rates";
 import IngredientsList from "./ingredientsList";
 import Instructions from "./instructions";
@@ -11,6 +11,7 @@ import AddComment from "./addComment";
 export default function DisplayCoctailDetails() {
     const {getCoctailDetails, getComments, authenticated_AdminRole} = useAppCtx();
     const {id} = useParams();
+    let navigate = useNavigate();
 
     const thisCoctail = getCoctailDetails(parseInt(id));
 
@@ -24,9 +25,19 @@ export default function DisplayCoctailDetails() {
         component.style.display = 'block';
     }
 
+    const handleDetails = (id) => {
+        let path = "/coctailEdit/" + id;
+        navigate(path);
+    }
+
     return (
         <section className="coctailDetails">
-            <img className="imgCoctail" src={thisCoctail.image}/>
+            //todo change line below on true
+            {!authenticated_AdminRole && (<button id={"btnEdit#" + id} className="btn btn-warning btnDetails"
+                    onClick={() => handleDetails(id)}>EDYTUJ
+            </button>)}
+            //todo usun koktajl
+            <div><img className="imgCoctail" src={thisCoctail.image}/></div>
             <h1>{thisCoctail.name}</h1>
             <h3>Typ: {thisCoctail.type}</h3>
             <Rates id={thisCoctail.id} ratings={thisCoctail.ratings}/>

@@ -404,7 +404,14 @@
     "image": "/mojitoWirgin.jpg",
     "type": "Bezalkoholowy",
     "glass": "Highball",
-    "ratings": [5,4,3,4,5,5],
+    "ratings": [
+      5,
+      4,
+      3,
+      4,
+      5,
+      5
+    ],
     "ingredients": [
       {
         "name": "Sok z limonki",
@@ -446,7 +453,13 @@
     "image": "/kamikadze.jpg",
     "type": "Alkoholowy",
     "glass": "Shot",
-    "ratings": [4,4,5,3,5],
+    "ratings": [
+      4,
+      4,
+      5,
+      3,
+      5
+    ],
     "ingredients": [
       {
         "name": "Wódka",
