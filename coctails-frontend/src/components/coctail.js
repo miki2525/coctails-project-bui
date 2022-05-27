@@ -1,8 +1,4 @@
 import React, {useState} from 'react';
-import Rates from "./rates";
-import IngredientsList from "./ingredientsList";
-import Instructions from "./instructions";
-import Comments from "./comments";
 import {useNavigate} from 'react-router-dom'
 import '../styles/coctail.scss'
 import {Trash} from "react-bootstrap-icons";

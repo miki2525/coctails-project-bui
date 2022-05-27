@@ -119,12 +119,43 @@ export default function AppContextProvider({children}) {
                         setCoctails(data)
                         window.location.href = "http://localhost:3001/";
                     } else {
-                        console.log("SERVER ERROR - delete()");
+                        console.log("SERVER ERROR - deleteCoctail()");
                     }
                 })
         }
         else {
-            console.log("ANULOWANO USUNIĘCIE id:" + id)
+            console.log("ANULOWANO USUNIĘCIE KOKTAJLU id:" + id)
+        }
+    }
+
+    const deleteComment = (id) =>{
+        if(window.confirm("Czy napewno chcesz usunąć ten komentarz")){
+            const idToSend = {id: id};
+            const requestOptions = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(idToSend)
+            };
+            fetch('/comments/deleteComment', requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        console.log(response.statusText)
+                    }
+                })
+                .then(data => {
+                    if (data) {
+                        window.alert("USUNIĘTO");
+                        setComments(data)
+                        window.location.reload();
+                    } else {
+                        console.log("SERVER ERROR - deleteComment()");
+                    }
+                })
+        }
+        else {
+            console.log("ANULOWANO USUNIĘCIE KOMENTARZA id:" + id)
         }
     }
 
@@ -160,6 +191,7 @@ export default function AppContextProvider({children}) {
                 saveCoctails,
                 saveComments,
                 deleteCoctail,
+                deleteComment,
                 rateIt,
                 getCoctailDetails,
                 getComments,

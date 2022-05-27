@@ -96,6 +96,20 @@ app.post('/coctails/deleteCoctail', (req, res) => {
     res.send(dataToSave);
 });
 
+app.post('/comments/deleteComment', (req, res) => {
+    const reqId = req.body;
+    let rawData = fs.readFileSync(PATH_TO_COMMENTS);
+    const comments = JSON.parse(rawData);
+    comments.sort((c1, c2) => {
+        return c1.id - c2.id;
+    });
+    const updatedComments = comments.filter((c) =>
+        c.id !== reqId.id)
+    let dataToSave = JSON.stringify(updatedComments, null, 2);
+    fs.writeFileSync(PATH_TO_COMMENTS, dataToSave);
+    res.send(dataToSave);
+});
+
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../coctails-frontend/build', 'index.html'));
 })
