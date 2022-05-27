@@ -1,0 +1,494 @@
+[
+  {
+    "id": 1,
+    "name": "Mojito",
+    "image": "/mojito.jpg",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Biały Rum",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Limonka",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Cukierz Trzcinowy",
+        "amount": "2",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Limonkę wyszorować, pokroić na ćwiartki i wrzucić do szklanki.",
+      "Zasypać cukrem i dokładnie ugnieść.",
+      "Następnie dodać listki mięty i znowu ugnieść.",
+      "Do połowy wysokości szklanki dodać lód, a następnie rum i znów lód.",
+      "Zamieszać.",
+      "Na wierzch dodać wodę gazowaną i delikatnie zmieszać.",
+      "Szklankę udekorować limonką i listkami mięty."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Roy Rogers",
+    "image": "/royRogers.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      5,
+      4,
+      4,
+      4,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Cola",
+        "amount": "180",
+        "measurement": "ml"
+      },
+      {
+        "name": "Grenadyna",
+        "amount": "5",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      },
+      {
+        "name": "Wiśnia Maraschino",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Lód wkładamy do szklanki, a następnie wlewamy odrobinę grenadyny.",
+      "W kolejnym kroku wlewamy cole.",
+      "Całość dekorujemy wiśnią Maraschino.",
+      "Przed wypiciem mieszamy."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Shirley Temple",
+    "image": "/shirleyTemple.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      3,
+      5,
+      4,
+      5,
+      1
+    ],
+    "ingredients": [
+      {
+        "name": "Ginger",
+        "amount": "80",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lemon-lime soda",
+        "amount": "80",
+        "measurement": "ml"
+      },
+      {
+        "name": "Grenadyna ",
+        "amount": "5",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      },
+      {
+        "name": "Wiśnia Maraschino",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Lód wkładamy do szklanki, a następnie wlewamy odrobinę grenadyny.",
+      "W kolejnym kroku wlewamy równe ilości (u nas 80ml) Lemon-lime soda (np. sprite) oraz Ginger ale.",
+      "Dekorujemy wiśnią Maraschino.",
+      "Przed wypiciem mieszamy."
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Margarita",
+    "image": "/margarita.jpg",
+    "type": "Alkoholowy",
+    "glass": "Margarita",
+    "ratings": [
+      5,
+      4,
+      4,
+      5,
+      4,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Tequila",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Likier Triple Sec",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok z cytryny",
+        "amount": "15",
+        "measurement": "ml"
+      }
+    ],
+    "steps": [
+      "Do shakera wrzucić kostki lodu.",
+      "Wlać alkohol.",
+      "Wlać sok z cytryny",
+      "Zamieszać.",
+      "Brzeg kieliszka koktajlowego zamoczyć w soku z cytryny, a następnie otoczyć solą.",
+      "Wlać zawartość shakera."
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Pina Colada",
+    "image": "/pinacolada.jpg",
+    "type": "Alkoholowy",
+    "glass": "Hurricane",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      4,
+      4
+    ],
+    "ingredients": [
+      {
+        "name": "Rum",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Mleczko kokosowe",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Ananas",
+        "amount": "5",
+        "measurement": "plastrów"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Ananasa kroimy w mniejsze kawałki, wrzucamy do blendera.",
+      "Dodajemy kruszony lód.",
+      "Dodajemy mleko kokosowe.",
+      "Dodajemy rum.",
+      "Miksujemy."
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sex on the beach",
+    "image": "/sexOnTheBeach.jpg",
+    "type": "Alkoholowy",
+    "glass": "Hurricane",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Wódka",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Likier brzoskwiniowy",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok żurawinowy",
+        "amount": "100",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok pomarańczowy",
+        "amount": "100",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Do szklanki typu należy włożyć kilka kostek lodu.",
+      "Następnie wlać do środka wódkę, sok pomarańczowy i żurawinowy.",
+      "Całość delikatnie wymieszać.",
+      "Gotowy drink można serwować z dekoracją w postaci kawałka pomarańczy."
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Wściekły pies",
+    "image": "/pies.jpg",
+    "type": "Alkoholowy",
+    "glass": "Shot",
+    "ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Wódka",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok malinowy lub porzeczkowy",
+        "amount": "15",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sos Tabasco",
+        "amount": "3-4",
+        "measurement": "krople"
+      }
+    ],
+    "steps": [
+      "Zimną wódkę wlej do kieliszka.",
+      "Po kilku chwilach dodaj sok malinowy lub sok porzeczkowy.",
+      "Na koniec dodaj kilka kropel sosu tabasco.",
+      "Drinka nie mieszaj, poczekaj, aż sok sam opadnie na dno."
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Krwawa Mary",
+    "image": "/krwawaMary.jpg",
+    "type": "Alkoholowy",
+    "glass": "Highball",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Wódka",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok pomidorowy",
+        "amount": "80",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok z cytryny",
+        "amount": "1",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Sos Worcestershire",
+        "amount": "0.5",
+        "measurement": "łyżeczki"
+      },
+      {
+        "name": "Sól",
+        "amount": "",
+        "measurement": ""
+      },
+      {
+        "name": "Pieprz",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Do szklanki wrzucić kilka kostek lodu.",
+      "Wlać wódkę.",
+      "Dodać sok pomidorowy.",
+      "Dodać sok z cytryny.",
+      "Dodać sos Worcestershire.",
+      "Dodać przyprawy",
+      "Wymieszać.",
+      "Dopełnić resztą soku pomidorowego."
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Frog",
+    "image": "/frog.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Lowball",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Sok grejfrutowy",
+        "amount": "80",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok ananasowy",
+        "amount": "60",
+        "measurement": "mk"
+      },
+      {
+        "name": "Bezalkoholowe blue curacao",
+        "amount": "40",
+        "measurement": "ml"
+      }
+    ],
+    "steps": [
+      "Do shakera wlej sok grejfrutowy.",
+      "Dodaj sok ananasowy.",
+      "Dodaj blue curacao.",
+      "Wymieszaj.",
+      "Przelej do szklanki."
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mojito Wirgin",
+    "image": "/mojitoWirgin.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Highball",
+    "ratings": [
+      5,
+      4,
+      3,
+      4,
+      5,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Sok z limonki",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Miód wielokwiatowy",
+        "amount": "1",
+        "measurement": "łyżka"
+      },
+      {
+        "name": "Mięta",
+        "amount": "6-7",
+        "measurement": "listków"
+      },
+      {
+        "name": "Woda gazowana",
+        "amount": "150",
+        "measurement": "ml"
+      },
+      {
+        "name": "Kruszony lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Sok z limonki ugniatać z miętą, aż liście puszczą olejek.",
+      "Dodać miód i ponownie zamieszać.",
+      "Do naczynia z przygotowanym wcześniej crustem przełożyć połowę lodu i wlać całą wodę gazowaną, znowu zamieszać.",
+      "Włożyć resztę lodu.",
+      "Drink podawać schłodzony."
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Kamikadze",
+    "image": "/kamikadze.jpg",
+    "type": "Alkoholowy",
+    "glass": "Shot",
+    "ratings": [
+      4,
+      4,
+      5,
+      3,
+      5
+    ],
+    "ingredients": [
+      {
+        "name": "Wódka",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Blue curacao",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok z cytryny lub limonki",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Do schłodzonego shakera wlewamy wódkę.",
+      "Dodajemy blue curacao.",
+      "Dodajemy sok z cytryny.",
+      "Dodajemy lód.",
+      "Energicznie potrząsamy całością.",
+      "Przelewamy do kieliszków przy pomocy sitka, tak by kostki lodu nie wpadły do środka."
+    ]
+  }
+]

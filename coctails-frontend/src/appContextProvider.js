@@ -53,7 +53,7 @@ export default function AppContextProvider({children}) {
                         setCoctails(data)
                         window.location.href = "http://localhost:3001/coctail/" + coctailToSave.id;
                     } else {
-                        console.log("SERVER ERROR");
+                        console.log("SERVER ERROR - updateCoctail()");
                     }
                 })
         }
@@ -91,9 +91,40 @@ export default function AppContextProvider({children}) {
                         setComments(data)
                         window.location.reload();
                     } else {
-                        console.log("SERVER ERROR");
+                        console.log("SERVER ERROR - saveComment()");
                     }
                 })
+        }
+    }
+
+    const deleteCoctail = (id) =>{
+        if(window.confirm("Czy napewno chcesz usunąć ten koktajl")){
+            const idToSend = {id: id};
+            const requestOptions = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(idToSend)
+            };
+            fetch('/coctails/deleteCoctail', requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        console.log(response.statusText)
+                    }
+                })
+                .then(data => {
+                    if (data) {
+                        window.alert("USUNIĘTO");
+                        setCoctails(data)
+                        window.location.href = "http://localhost:3001/";
+                    } else {
+                        console.log("SERVER ERROR - delete()");
+                    }
+                })
+        }
+        else {
+            console.log("ANULOWANO USUNIĘCIE id:" + id)
         }
     }
 
@@ -128,6 +159,7 @@ export default function AppContextProvider({children}) {
                 setComments,
                 saveCoctails,
                 saveComments,
+                deleteCoctail,
                 rateIt,
                 getCoctailDetails,
                 getComments,

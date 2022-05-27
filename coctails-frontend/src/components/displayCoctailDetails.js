@@ -7,9 +7,10 @@ import Instructions from "./instructions";
 import Comments from "./comments";
 import '../styles/coctailDetails.scss'
 import AddComment from "./addComment";
+import {Trash} from 'react-bootstrap-icons'
 
 export default function DisplayCoctailDetails() {
-    const {getCoctailDetails, getComments, authenticated_AdminRole} = useAppCtx();
+    const {getCoctailDetails, getComments, authenticated_AdminRole, deleteCoctail} = useAppCtx();
     const {id} = useParams();
     let navigate = useNavigate();
 
@@ -25,18 +26,26 @@ export default function DisplayCoctailDetails() {
         component.style.display = 'block';
     }
 
-    const handleDetails = (id) => {
+    const handleEdit = (id) => {
         let path = "/coctailEdit/" + id;
         navigate(path);
+    }
+
+    const handleDelete = (id) => {
+        deleteCoctail(parseInt(id));
     }
 
     return (
         <section className="coctailDetails">
             //todo change line below on true
-            {!authenticated_AdminRole && (<button id={"btnEdit#" + id} className="btn btn-warning btnDetails"
-                    onClick={() => handleDetails(id)}>EDYTUJ
-            </button>)}
-            //todo usun koktajl
+            {!authenticated_AdminRole && (<div>
+                <button id={"btnEdit#" + id} className="btn btn-warning btnDetails"
+                        onClick={() => handleEdit(id)}>EDYTUJ
+                </button>
+                <button id={"btnDelete#" + id} className="btn btn-danger btnDetails"
+                        onClick={() => handleDelete(id)}><Trash size={22}/>
+                </button>
+            </div>)}
             <div><img className="imgCoctail" src={thisCoctail.image}/></div>
             <h1>{thisCoctail.name}</h1>
             <h3>Typ: {thisCoctail.type}</h3>
@@ -46,7 +55,7 @@ export default function DisplayCoctailDetails() {
             <Instructions steps={thisCoctail.steps}/>
             <Comments comments={thisComments}/>
             <button onClick={() => showCreator()}>Dodaj komentarz</button>
-            <div id="addComment" ><AddComment idCoctail={id}/></div>
+            <div id="addComment"><AddComment idCoctail={id}/></div>
         </section>
     );
 }

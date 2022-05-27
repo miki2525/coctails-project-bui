@@ -7,7 +7,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const bcrypt = require("bcrypt");
 const fs = require('fs');
-const {raw} = require("express");
 
 var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json"
 var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json"
@@ -78,6 +77,20 @@ app.post('/coctails/updateCoctail', (req, res) => {
         }
         return c;
     });
+    let dataToSave = JSON.stringify(updatedCoctails, null, 2);
+    fs.writeFileSync(PATH_TO_COCTAILS, dataToSave);
+    res.send(dataToSave);
+});
+
+app.post('/coctails/deleteCoctail', (req, res) => {
+    const reqId = req.body;
+    let rawData = fs.readFileSync(PATH_TO_COCTAILS);
+    const coctails = JSON.parse(rawData);
+    coctails.sort((c1, c2) => {
+        return c1.id - c2.id;
+    });
+    const updatedCoctails = coctails.filter((c) =>
+    c.id !== reqId.id)
     let dataToSave = JSON.stringify(updatedCoctails, null, 2);
     fs.writeFileSync(PATH_TO_COCTAILS, dataToSave);
     res.send(dataToSave);
