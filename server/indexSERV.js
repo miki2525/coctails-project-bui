@@ -1,5 +1,5 @@
 const dataAlaDB = require('./alaDB/adminCred.json');
-process.env.PWD = process.cwd()
+process.env.PWD = process.cwd();
 const path = require('path');
 const express = require("express");
 const PORT = process.env.PORT || 3001;
@@ -7,16 +7,22 @@ const app = express();
 const bodyParser = require('body-parser');
 const bcrypt = require("bcrypt");
 const fs = require('fs');
-const cors = require('cors')
+const cors = require('cors');
+const PDFDocument = require('pdfkit');
 
 app.use(express.static(path.resolve(__dirname, '../coctails-frontend/build')));
 app.use(express.static(process.env.PWD + '/coctails-frontend/src/data/images'));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded({extended: true}));
 
-var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json"
-var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json"
+var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json";
+var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json";
+var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
+var PATH_TO_PUBLIC = process.env.PWD + "/server/public/";
+var PATH_TO_FONTS = process.env.PWD + "/server/fonts/";
+var PDF_COCTAILS_DIR = "pdfCoctails/";
+var PDF_FILE_EXTENSION = ".pdf";
 
 app.get('/api/getData', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COMMENTS);
@@ -130,6 +136,24 @@ app.post('/coctails/rateCoctail', (req, res) => {
     res.send(dataToSave);
 });
 
+app.get('/coctails/downloadCoctail', (req, res) => {
+    const reqId = parseInt(req.query.coctailId);
+    let rawData = fs.readFileSync(PATH_TO_COCTAILS);
+    const coctails = JSON.parse(rawData);
+    const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
+    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.toLowerCase() + PDF_FILE_EXTENSION;
+    if (!fs.existsSync(pathToFile)) {
+        loadCoctailDataToPDF(pathToFile, requestedCoctail);
+    }
+    let file = fs.createReadStream(pathToFile);
+    file.on('end', function () {
+        fs.unlink(pathToFile, function () {
+            console.log(pathToFile + " DELETED")
+        });
+    });
+    file.pipe(res);
+});
+
 app.post('/coctails/deleteCoctail', (req, res) => {
     const reqId = req.body;
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
@@ -198,7 +222,7 @@ const createCoctail = (data, createNew) => {
     const steps = data.steps.split(".").map((step) => step.trim()).filter((step) => step !== '')
         .map((step) => step + '.');
     let coctail = {};
-    if(createNew){
+    if (createNew) {
         coctail = {
             id: undefined,
             name: data.name,
@@ -222,6 +246,67 @@ const createCoctail = (data, createNew) => {
         }
     }
     return coctail;
+}
+
+const loadCoctailDataToPDF = (pathToFile, coctail) => {
+    const doc = new PDFDocument();
+    doc.pipe(fs.createWriteStream(pathToFile));
+    // Tittle
+    doc
+        .fontSize(12)
+        .font(PATH_TO_FONTS + "times.ttf")
+        .text("Przepis na", {
+            width: 410,
+            align: 'center'
+        })
+        .moveDown()
+        .fontSize(16)
+        .font(PATH_TO_FONTS + "timesBold.ttf")
+        .text(coctail.name, {
+            width: 410,
+            align: 'center',
+            underline: true
+        });
+    //IMG
+    //     doc
+    //         .moveDown()
+    //         .image(PATH_TO_IMAGES + coctail.image, {
+    //         fit: [300, 300],
+    //         align: 'center',
+    //         valign: 'center'
+    //     });
+    //Ingredients
+    doc
+        .moveDown()
+        .fontSize(14)
+        .text("Składniki:", {
+            width: 410,
+            underline: true
+        })
+        .fontSize(12)
+        .font(PATH_TO_FONTS + "times.ttf");
+    coctail.ingredients.forEach((ingr, index) => {
+        doc
+            .moveDown()
+            .text(index + 1 + ". " + ingr.name + " " + ingr.amount + " " + ingr.measurement);
+    })
+    //Steps
+    doc
+        .moveDown()
+        .fontSize(14)
+        .font(PATH_TO_FONTS + "timesBold.ttf")
+        .text("Sposób przygotowania", {
+            width: 410,
+            underline: true
+        })
+        .fontSize(12)
+        .font(PATH_TO_FONTS + "times.ttf");
+    coctail.steps.forEach((step, index) => {
+        doc
+            .moveDown()
+            .text(index + 1 + ". " + step + ".");
+    })
+    doc.end();
 }
 
 //

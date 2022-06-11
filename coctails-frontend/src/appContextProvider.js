@@ -203,6 +203,33 @@ export default function AppContextProvider({children}) {
             })
     }
 
+    const downloadCoctail = (id) => {
+        fetch('/coctails/downloadCoctail?'+ new URLSearchParams({
+            coctailId: id
+        }))
+            .then(response => {
+                if (response.ok) {
+                    return response.blob();
+                } else {
+                    console.log(response.statusText)
+                }
+            })
+            .then(blob => {
+                if (blob) {
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    let requestedCoctail = coctails.find((coctail) => coctail.id === id);
+                    a.download = requestedCoctail.name + ".pdf";
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                } else {
+                    console.log("SERVER ERROR - downloadCoctail()");
+                }
+            })
+    }
+
     const getCoctailDetails = (id) => {
         return coctails.find((coctail) => coctail.id === id);
     }
@@ -227,6 +254,7 @@ export default function AppContextProvider({children}) {
                 deleteCoctail,
                 deleteComment,
                 rateIt,
+                downloadCoctail,
                 getCoctailDetails,
                 getComments,
                 authenticated_AdminRole,
