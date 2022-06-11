@@ -10,7 +10,7 @@ import AddComment from "./addComment";
 import {Trash} from 'react-bootstrap-icons'
 
 export default function DisplayCoctailDetails() {
-    const {getCoctailDetails, getComments, authenticated_AdminRole, deleteCoctail} = useAppCtx();
+    const {getCoctailDetails, getComments, authenticated_AdminRole, deleteCoctail, rateIt} = useAppCtx();
     const {id} = useParams();
     let navigate = useNavigate();
 
@@ -37,8 +37,7 @@ export default function DisplayCoctailDetails() {
 
     return (
         <section className="coctailDetails">
-            //todo change line below on true
-            {!authenticated_AdminRole && (<div>
+            {authenticated_AdminRole && (<div>
                 <button id={"btnEdit#" + id} className="btn btn-warning btnDetails"
                         onClick={() => handleEdit(id)}>EDYTUJ
                 </button>
@@ -49,7 +48,7 @@ export default function DisplayCoctailDetails() {
             <div><img className="imgCoctail" src={thisCoctail.image}/></div>
             <h1>{thisCoctail.name}</h1>
             <h3>Typ: {thisCoctail.type}</h3>
-            <Rates id={thisCoctail.id} ratings={thisCoctail.ratings}/>
+            <Rates id={thisCoctail.id} ratings={thisCoctail.ratings} onChange={(rate) => rateIt(parseInt(id), rate)} />
             <h3 className="glass">Szkło: {thisCoctail.glass}</h3>
             <IngredientsList list={thisCoctail.ingredients}/>
             <Instructions steps={thisCoctail.steps}/>

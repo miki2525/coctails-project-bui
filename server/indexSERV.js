@@ -7,13 +7,16 @@ const app = express();
 const bodyParser = require('body-parser');
 const bcrypt = require("bcrypt");
 const fs = require('fs');
-
-var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json"
-var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json"
+const cors = require('cors')
 
 app.use(express.static(path.resolve(__dirname, '../coctails-frontend/build')));
 app.use(express.static(process.env.PWD + '/coctails-frontend/src/data/images'));
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.urlencoded({extended: true}));
+
+var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json"
+var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json"
 
 app.get('/api/getData', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COMMENTS);
@@ -62,6 +65,32 @@ app.post('/comments/saveComment', (req, res) => {
     res.send(dataToSave);
 });
 
+app.post('/coctails/createCoctail', (req, res) => {
+    const reqData = req.body;
+    console.log(reqData)
+    // console.log(reqData.name);
+    //  cosnole.log("FILE");
+    //  console.log(req.files);
+    //  console.log(req.name);
+    // console.log("BODY");
+    // console.log(req.body);
+    let rawData = fs.readFileSync(PATH_TO_COCTAILS);
+    const coctails = JSON.parse(rawData);
+    const createdCoctail = createCoctail(reqData, true);
+
+    coctails.sort((c1, c2) => {
+        return c1.id - c2.id;
+    });
+
+    createdCoctail.id = coctails.length + 1;
+    createdCoctail.image = "/noPhoto.jpg";
+    coctails.push(createdCoctail);
+
+    let dataToSave = JSON.stringify(coctails, null, 2);
+    fs.writeFileSync(PATH_TO_COCTAILS, dataToSave);
+    res.send(dataToSave);
+});
+
 app.post('/coctails/updateCoctail', (req, res) => {
     const reqData = req.body;
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
@@ -72,10 +101,29 @@ app.post('/coctails/updateCoctail', (req, res) => {
         return c1.id - c2.id;
     });
     const updatedCoctails = coctails.map((c) => {
-        if (c.id === coctailToUpdate.id){
+        if (c.id === coctailToUpdate.id) {
             Object.assign(c, coctailToUpdate);
         }
         return c;
+    });
+    let dataToSave = JSON.stringify(updatedCoctails, null, 2);
+    fs.writeFileSync(PATH_TO_COCTAILS, dataToSave);
+    res.send(dataToSave);
+});
+
+app.post('/coctails/rateCoctail', (req, res) => {
+    const reqData = req.body;
+    let rawData = fs.readFileSync(PATH_TO_COCTAILS);
+    const coctails = JSON.parse(rawData);
+    const updatedCoctails = coctails.map((coctail) => {
+        if (reqData.idCoctail === coctail.id) {
+            coctail.ratings.push(reqData.rate);
+        }
+        return coctail;
+    });
+
+    coctails.sort((c1, c2) => {
+        return c1.id - c2.id;
     });
     let dataToSave = JSON.stringify(updatedCoctails, null, 2);
     fs.writeFileSync(PATH_TO_COCTAILS, dataToSave);
@@ -90,7 +138,7 @@ app.post('/coctails/deleteCoctail', (req, res) => {
         return c1.id - c2.id;
     });
     const updatedCoctails = coctails.filter((c) =>
-    c.id !== reqId.id)
+        c.id !== reqId.id)
     let dataToSave = JSON.stringify(updatedCoctails, null, 2);
     fs.writeFileSync(PATH_TO_COCTAILS, dataToSave);
     res.send(dataToSave);
@@ -132,7 +180,7 @@ const getToday = () => {
     return date.toString();
 }
 
-const createCoctail = (data) => {
+const createCoctail = (data, createNew) => {
     const ingredients = [];
     let nameIngr = "nameIngr"
     let amount = "amount";
@@ -149,13 +197,29 @@ const createCoctail = (data) => {
     }
     const steps = data.steps.split(".").map((step) => step.trim()).filter((step) => step !== '')
         .map((step) => step + '.');
-    const coctail = {
-        id: data.id,
-        name: data.name,
-        type: data.type,
-        glass: data.glass,
-        ingredients: ingredients,
-        steps: steps
+    let coctail = {};
+    if(createNew){
+        coctail = {
+            id: undefined,
+            name: data.name,
+            image: "",
+            type: data.type,
+            glass: data.glass,
+            ratings: [],
+            ingredients: ingredients,
+            steps: steps
+        }
+    }
+    //update
+    else {
+        coctail = {
+            id: data.id,
+            name: data.name,
+            type: data.type,
+            glass: data.glass,
+            ingredients: ingredients,
+            steps: steps
+        }
     }
     return coctail;
 }

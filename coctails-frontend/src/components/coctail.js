@@ -25,8 +25,7 @@ export default function Coctail({id, name, image, type}) {
             <button id={"btnDetails#" + id} className="btn btn-info btnDetails"
                     onClick={() => handleDetails(id)}>SZCZEGÓŁY
             </button>
-            //make true below
-            {!authenticated_AdminRole && (<div>
+            {authenticated_AdminRole && (<div>
                 <button id={"btnDelete#" + id} className="btn btn-danger btnDetails"
                         onClick={() => handleDelete(id)}><Trash size={22}/>
                 </button>

@@ -9,6 +9,7 @@ import AdminLogin from "./components/adminLogin";
 import {useAppCtx} from "./appContextProvider";
 import EditCoctail from "./components/editCoctail";
 import {PlusCircle} from "react-bootstrap-icons";
+import CreateCoctail from "./components/createCoctail";
 import './styles/body.scss'
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
                     <Route path="/" exact element={<DisplayCoctails/>}/>
                     <Route path="/coctail/:id" exact element={<DisplayCoctailDetails/>}/>
                     <Route path="/coctailEdit/:id" exact element={<EditCoctail/>}/>
-                    {/*<Route path="/createCoctail" exact element={<NewCoctail/>}/>*/}
+                    <Route path="/createCoctail" exact element={<CreateCoctail/>}/>
                     <Route exact path="/about" element={<About/>}/>
                     <Route exact path="/api/adminLogin" element={<AdminLogin/>}/>
 
@@ -41,7 +42,6 @@ function App() {
                 {!authenticated_AdminRole && (<NavLink className="link" to="/api/adminLogin">(admin)</NavLink>)}
                 {authenticated_AdminRole && (
                     <div><NavLink className="link" onClick={() => logout()} to="/">(wyloguj)</NavLink>
-                        <NavLink className="link" to="/createCoctail"><PlusCircle size={22}/></NavLink>
                     </div>)
                 }
             </div>

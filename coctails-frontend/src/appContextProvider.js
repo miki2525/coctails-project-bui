@@ -33,13 +33,12 @@ export default function AppContextProvider({children}) {
     }
 
     const saveCoctails = (coctailToSave, update) => {
-        const requestOptions = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(coctailToSave)
-        };
-        //update
         if (update) {
+            const requestOptions = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(coctailToSave)
+            };
             fetch('/coctails/updateCoctail', requestOptions)
                 .then(response => {
                     if (response.ok) {
@@ -57,11 +56,31 @@ export default function AppContextProvider({children}) {
                     }
                 })
         }
-        //save
+        //save(create)
         else {
-            setCoctails(coctailToSave);
-            setCoctailsSearch(coctailToSave);
-            ////TODO call API + save coctails,json
+            // headers: {'Content-Type': 'multipart/form-data'},
+            const requestOptions = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(coctailToSave)
+            };
+
+            fetch('/coctails/createCoctail', requestOptions)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        console.log(response.statusText)
+                    }
+                })
+                .then(data => {
+                    if (data) {
+                        setCoctails(data)
+                        window.location.href = "http://localhost:3001/";
+                    } else {
+                        console.log("SERVER ERROR - saveCoctail()");
+                    }
+                })
         }
     }
 
@@ -160,13 +179,28 @@ export default function AppContextProvider({children}) {
     }
 
     const rateIt = (id, rate) => {
-        const updatedRateCoctails = coctails.map((coctail) => {
-            if (coctail.id === id) {
-                coctail.ratings.push(rate);
-            }
-            return coctail;
-        });
-        saveCoctails(updatedRateCoctails);
+        const rateToSend = {idCoctail: id, rate: rate};
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(rateToSend)
+        };
+        fetch('/coctails/rateCoctail', requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.log(response.statusText)
+                }
+            })
+            .then(data => {
+                if (data) {
+                    setCoctails(data)
+                    window.location.reload();
+                } else {
+                    console.log("SERVER ERROR - rateCoctail()");
+                }
+            })
     }
 
     const getCoctailDetails = (id) => {
