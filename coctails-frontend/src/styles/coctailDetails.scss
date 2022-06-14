@@ -7,11 +7,11 @@
   background-color: darkgray;
 
 .general{
-  width: 220px; /* Can be in percentage also. */
+  width: 220px;
   height: auto;
   margin: 0 auto;
   padding: 10px;
-  position: relative;
+  text-align: center;
 }
 
   .general div:not(:first-child){

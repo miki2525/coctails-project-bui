@@ -1,15 +1,13 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
-import coctailsData from './data/coctails.json';
-import commentsData from './data/comments.json';
 
 const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
-
+{/*//todo move data on server-side*/}
 export default function AppContextProvider({children}) {
-    const [coctails, setCoctails] = useState(coctailsData); //reset to ''
-    const [comments, setComments] = useState(commentsData); //reset
-    const [coctailsSearch, setCoctailsSearch] = useState(coctailsData); //reset
-    const [loading, setLoading] = useState(false); //set to true
+    const [coctails, setCoctails] = useState('');
+    const [comments, setComments] = useState('');
+    const [coctailsSearch, setCoctailsSearch] = useState('');
+    const [loading, setLoading] = useState(true);
     const [authenticated_AdminRole, setAuthenticated_AdminRole] = useState(false);
 
     useEffect(() => {

@@ -21,6 +21,7 @@ export default function NavigationBar() {
             </div>)
             }
             {/*//todo add filters*/}
+            {/*//todo add sorting*/}
             <div className="links">
                 <NavLink className="link" to="/"><House size={22}></House></NavLink>
                 <NavLink className="link" to="/about">O nas</NavLink>

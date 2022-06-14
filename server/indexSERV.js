@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 // app.use(express.urlencoded({extended: true}));
 
+//todo move data on server-side
 var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json";
 var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json";
 var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
