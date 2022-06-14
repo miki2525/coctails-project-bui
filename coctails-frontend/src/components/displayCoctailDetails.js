@@ -10,7 +10,14 @@ import AddComment from "./addComment";
 import {Trash} from 'react-bootstrap-icons'
 
 export default function DisplayCoctailDetails() {
-    const {getCoctailDetails, getComments, authenticated_AdminRole, deleteCoctail, rateIt, downloadCoctail} = useAppCtx();
+    const {
+        getCoctailDetails,
+        getComments,
+        authenticated_AdminRole,
+        deleteCoctail,
+        rateIt,
+        downloadCoctail
+    } = useAppCtx();
     const {id} = useParams();
     let navigate = useNavigate();
 
@@ -36,7 +43,7 @@ export default function DisplayCoctailDetails() {
     }
 
     return (
-        <section className="coctailDetails">
+        <div className="coctailDetails">
             {authenticated_AdminRole && (<div>
                 <button id={"btnEdit#" + id} className="btn btn-warning btnDetails"
                         onClick={() => handleEdit(id)}>EDYTUJ
@@ -46,21 +53,25 @@ export default function DisplayCoctailDetails() {
                 </button>
             </div>)}
 
-            <div>
+            <div className="general">
                 <div><img className="imgCoctail" src={thisCoctail.image}/></div>
                 <div>
-                    <button className="btn btn-info" onClick={() => downloadCoctail(parseInt(id))}>Pobierz przepis</button>
+                    <h1>{thisCoctail.name}</h1>
+                    <button className="btn btn-primary" onClick={() => downloadCoctail(parseInt(id))}>Pobierz przepis
+                    </button>
                 </div>
             </div>
-            <h1>{thisCoctail.name}</h1>
             <h3>Typ: {thisCoctail.type}</h3>
-            <Rates id={thisCoctail.id} ratings={thisCoctail.ratings} onChange={(rate) => rateIt(parseInt(id), rate)}/>
+            <Rates id={thisCoctail.id} ratings={thisCoctail.ratings}
+                   onChange={(rate) => rateIt(parseInt(id), rate)}/>
             <h3 className="glass">Szkło: {thisCoctail.glass}</h3>
+
             <IngredientsList list={thisCoctail.ingredients}/>
             <Instructions steps={thisCoctail.steps}/>
+
             <Comments comments={thisComments}/>
             <button onClick={() => showCreator()}>Dodaj komentarz</button>
             <div id="addComment"><AddComment idCoctail={id}/></div>
-        </section>
+        </div>
     );
 }

@@ -204,7 +204,7 @@ export default function AppContextProvider({children}) {
     }
 
     const downloadCoctail = (id) => {
-        fetch('/coctails/downloadCoctail?'+ new URLSearchParams({
+        fetch('/coctails/downloadCoctail?' + new URLSearchParams({
             coctailId: id
         }))
             .then(response => {

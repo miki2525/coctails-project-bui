@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useAppCtx} from "../appContextProvider";
 import {Navigate, useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import {ingredientsNotEmpty} from "../utils/coctailValidator";
 
 export default function EditCoctail() {
     const {getCoctailDetails, getComments, authenticated_AdminRole, saveCoctails} = useAppCtx();
@@ -49,14 +50,25 @@ export default function EditCoctail() {
     //     setIngredients(deletedIndex);
     // }
 
+    const isNotEmpty = (data) => {
+        return Object.keys(data).filter((prop) => prop.includes("nameIngr"))
+            .some((nameIngr) => data[nameIngr] !== "");
+    }
+
     const submit = (data, e) => {
         e.preventDefault();
+        let errorIngr = document.getElementById("errorIngr");
+        if (!ingredientsNotEmpty(data)) {
+            errorIngr.innerText = "Musi być choć jedna nazwa składnika";
+            return;
+        }
+        errorIngr.innerText = "";
         data.id = parseInt(id);
         saveCoctails(data, true)
     };
 
     return (
-        <div className="Coctaileditor">
+        <div className="coctailForm">
             <fieldset>
                 <legend>Eydcja Koktajlu</legend>
                 <form onSubmit={handleSubmit(submit)}>
@@ -72,17 +84,18 @@ export default function EditCoctail() {
                         {ingredients.map((ingredient, index) => {
                             return (<div key={index}>
                                 <input
-                                    type="text" {...register('nameIngr' + index)}
+                                    type="text" className="ingr" {...register('nameIngr' + index)}
                                     defaultValue={ingredient.name}/>
                                 <input
-                                    type="text" {...register('amount' + index)}
+                                    type="text" className="ingr" {...register('amount' + index)}
                                     defaultValue={ingredient.amount}/>
                                 <input
-                                    type="text" {...register('measurement' + index)}
+                                    type="text" className="ingr" {...register('measurement' + index)}
                                     defaultValue={ingredient.measurement}/>
                                 {/*<button type="button" className="btn btn-secondary" onClick={() => deleteElement/(index)}>USUN</button>*/}
                             </div>);
                         })}
+                        <div id="errorIngr"/>
                         <button type="button" className="btn btn-info" onClick={() => addElement()}>DODAJ SKŁADNIK
                         </button>
                     </div>

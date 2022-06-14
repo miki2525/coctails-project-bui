@@ -8,9 +8,7 @@ import DisplayCoctailDetails from "./components/displayCoctailDetails";
 import AdminLogin from "./components/adminLogin";
 import {useAppCtx} from "./appContextProvider";
 import EditCoctail from "./components/editCoctail";
-import {PlusCircle} from "react-bootstrap-icons";
 import CreateCoctail from "./components/createCoctail";
-import './styles/body.scss'
 
 function App() {
     const {authenticated_AdminRole, setAuthenticated_AdminRole, loading} = useAppCtx();
@@ -23,6 +21,13 @@ function App() {
     }
     return (
         <BrowserRouter>
+            <div className="adminPanel">
+                {!authenticated_AdminRole && (<NavLink className="link" to="/api/adminLogin">(admin)</NavLink>)}
+                {authenticated_AdminRole && (
+                    <div><NavLink className="link" onClick={() => logout()} to="/">(wyloguj)</NavLink>
+                    </div>)
+                }
+            </div>
             <NavigationBar/>
             <div>
                 <Routes>
@@ -37,13 +42,6 @@ function App() {
                     <Route path="*" element={<Navigate to="/404"/>}/>
                     <Route path="/404" element={<PageNotFound/>}/>
                 </Routes>
-            </div>
-            <div className="adminPanel">
-                {!authenticated_AdminRole && (<NavLink className="link" to="/api/adminLogin">(admin)</NavLink>)}
-                {authenticated_AdminRole && (
-                    <div><NavLink className="link" onClick={() => logout()} to="/">(wyloguj)</NavLink>
-                    </div>)
-                }
             </div>
         </BrowserRouter>
     );

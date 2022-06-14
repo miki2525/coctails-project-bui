@@ -1,7 +1,22 @@
 .coctailDetails {
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-top: 25px;
+  padding-left: 1px;
+  margin-top: 20px;
+  border: 2px solid violet;
+  border-radius: 25px;
+  box-shadow: 0px 0px 45px palevioletred, 0px 1px 45px palevioletred;
+  background-color: darkgray;
+
+.general{
+  width: 220px; /* Can be in percentage also. */
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+
+  .general div:not(:first-child){
+    margin-left: 60px;
+  }
 
   //IMG
   .imgCoctail {
@@ -27,6 +42,12 @@
   //INGREDIENTS
   .ingredientsContainer {
     margin-top: 10px;
+    border-top: 10px double yellow;
+  }
+
+  .instructionsContainer{
+    border-top: 3px solid black;
+    border-bottom: 10px double yellow;
   }
 
   //COMMENTS

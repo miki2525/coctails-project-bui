@@ -1,10 +1,35 @@
-.coctailWrapper {
-  .coctail:first-child {
-    margin-top: 25px;
-  }
+.coctails {
+  width: 100%;
+  float: left;
+  background-color: whitesmoke;
+  height: auto;
+  padding: 60px 0px;
+}
 
-  .coctail {
-    margin-bottom: 50px;
-    padding: 10px 10px 10px 10px;
-  }
+.section {
+  float: left;
+  width: 100%;
+}
+
+.coctailWrapper {
+  position: relative;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 5;
+}
+
+.row div {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.row .coctail:hover {
+  opacity: 0.8;
+}
+
+button {
+  margin-top: 10px;
 }

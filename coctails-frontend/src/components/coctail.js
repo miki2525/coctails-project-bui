@@ -18,18 +18,20 @@ export default function Coctail({id, name, image, type}) {
     }
 
     return (
-        <section className="coctail">
-            <img className="imgCoctail" src={image}/>
-            <h1>{name}</h1>
-            <h3>Typ: {type}</h3>
-            <button id={"btnDetails#" + id} className="btn btn-info btnDetails"
-                    onClick={() => handleDetails(id)}>SZCZEGÓŁY
-            </button>
-            {authenticated_AdminRole && (<div>
-                <button id={"btnDelete#" + id} className="btn btn-danger btnDetails"
-                        onClick={() => handleDelete(id)}><Trash size={22}/>
+        <div className="col-xl-12 col-lg-4 col-md-6 col-sm-12">
+            <div className="coctail">
+                <figure><img className="imgCoctail" src={image}/></figure>
+                <h1>{name}</h1>
+                <h3>Typ: {type}</h3>
+                <button id={"btnDetails#" + id} className="btn btn-info btnDetails"
+                        onClick={() => handleDetails(id)}>SZCZEGÓŁY
                 </button>
-            </div>)}
-        </section>
+                {authenticated_AdminRole && (<div>
+                    <button id={"btnDelete#" + id} className="btn btn-danger btnDetails"
+                            onClick={() => handleDelete(id)}><Trash size={22}/>
+                    </button>
+                </div>)}
+            </div>
+        </div>
     );
 }

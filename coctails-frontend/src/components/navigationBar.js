@@ -16,8 +16,7 @@ export default function NavigationBar() {
     return (
         <div className="NavigationBar">
             <Search/>
-            //todo below true
-            {!authenticated_AdminRole && (<div>
+            {authenticated_AdminRole && (<div>
                 <NavLink className="link" to="/createCoctail"><PlusCircle size={22}/></NavLink>
             </div>)
             }

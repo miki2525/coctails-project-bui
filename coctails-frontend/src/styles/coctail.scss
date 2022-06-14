@@ -1,43 +1,19 @@
 .coctail {
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 2px solid violet;
+  border-radius: 25px;
+  box-shadow: 0px 0px 45px palevioletred, 0px 1px 45px palevioletred;
+  background: darkgray;
+  text-align: center;
+  width: 80%;
+  padding: 10px 0px 10px 0px;
+
+  figure {
+    margin: 0;
+  }
 
   .imgCoctail {
     width: 250px;
     height: 250px;
     object-fit: cover;
-  }
-
-  .btnDetails {
-    margin-top: 20px;
-  }
-
-
-  .ratesContainer {
-    margin-top: 20px;
-
-    .stars {
-      margin-top: -10px;
-    }
-
-    .avgRateText {
-      font-size: small;
-      margin-bottom: 10px;
-    }
-  }
-
-  .ingredientsContainer {
-    margin-top: 10px;
-  }
-
-
-  .commentsContainer {
-    :not(:first-child) :not(p), .text{
-      background-color: lightgray;
-    }
-    .date {
-      font-size: smaller;
-      font-family: Corbel;
-    }
   }
 }
