@@ -44,7 +44,7 @@ export default function DisplayCoctailDetails() {
 
     return (
         <div className="coctailDetails">
-            {authenticated_AdminRole && (<div>
+            {authenticated_AdminRole && (<div className="btnDetContainer">
                 <button id={"btnEdit#" + id} className="btn btn-warning btnDetails"
                         onClick={() => handleEdit(id)}>EDYTUJ
                 </button>
