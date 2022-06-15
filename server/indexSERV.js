@@ -121,7 +121,11 @@ app.post('/coctails/createCoctail', upload.single("file"), (req, res) => {
 });
 
 app.post('/coctails/updateCoctail', upload.single("file"), (req, res) => {
-    const reqData = req.body;
+    const reqData = JSON.parse(req.body.coctail);
+    const image = req.file;
+    if(image !== undefined){
+        reqData.image = '/' + image.filename;
+    }
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const coctailToUpdate = createCoctail(reqData);
@@ -131,6 +135,13 @@ app.post('/coctails/updateCoctail', upload.single("file"), (req, res) => {
     });
     const updatedCoctails = coctails.map((c) => {
         if (c.id === coctailToUpdate.id) {
+            //if name has changed check if file was uploaded, otherwise assign img to noPhoto.jpg
+            console.log(image);
+            console.log(c.name.replace(/\s/g, ''));
+            console.log(coctailToUpdate.name.replace(/\s/g, ''));
+            if (c.name.replace(/\s/g, '') !== coctailToUpdate.name.replace(/\s/g, '') && image === undefined){
+                coctailToUpdate.image = "/noPhoto.jpg";
+            }
             Object.assign(c, coctailToUpdate);
         }
         return c;
@@ -164,7 +175,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
-    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.toLowerCase() + PDF_FILE_EXTENSION;
+    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     if (!fs.existsSync(pathToFile)) {
         loadCoctailDataToPDF(pathToFile, requestedCoctail);
     }
@@ -266,6 +277,9 @@ const createCoctail = (data, createNew) => {
             glass: data.glass,
             ingredients: ingredients,
             steps: steps
+        }
+        if (data.image !== undefined){
+            coctail.image = data.image;
         }
     }
     return coctail;

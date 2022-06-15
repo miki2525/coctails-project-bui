@@ -33,12 +33,18 @@ export default function AppContextProvider({children}) {
     }
 
     const saveCoctails = (coctailToSave, update) => {
+        const formData = new FormData();
+        const file = coctailToSave.file[0];
+        delete coctailToSave.file;
+        formData.append("coctail", JSON.stringify(coctailToSave));
+        formData.append("file", file);
+        delete coctailToSave.file;
+        const requestOptions = {
+            method: 'POST',
+            // headers: {'Content-Type': 'multipart/form-data'},
+            body: formData
+        };
         if (update) {
-            const requestOptions = {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(coctailToSave)
-            };
             fetch('/coctails/updateCoctail', requestOptions)
                 .then(response => {
                     if (response.ok) {
@@ -58,19 +64,6 @@ export default function AppContextProvider({children}) {
         }
         //save(create)
         else {
-            const formData = new FormData();
-            const file = coctailToSave.file[0];
-            delete coctailToSave.file;
-            formData.append("coctail", JSON.stringify(coctailToSave));
-            formData.append("file", file);
-            delete coctailToSave.file;
-
-
-            const requestOptions = {
-                method: 'POST',
-                // headers: {'Content-Type': 'multipart/form-data'},
-                body: formData
-            };
             fetch('/coctails/createCoctail', requestOptions)
                 .then(response => {
                     if (response.ok) {

@@ -23,8 +23,6 @@ export default function EditCoctail() {
     const thisCoctail = getCoctailDetails(parseInt(id));
 
 
-
-
     if (thisCoctail === undefined) {
         return (<Navigate to="/404"/>)
     }
@@ -73,6 +71,7 @@ export default function EditCoctail() {
                 <legend>Eydcja Koktajlu</legend>
                 <form onSubmit={handleSubmit(submit)}>
                     <div>Nazwa <input type="text" {...register('name')} defaultValue={thisCoctail.name} required/></div>
+                    <div><input type="file" {...register("file")} accept='image/*'/></div>
                     <div>Typ <select {...register('type')} defaultValue={thisCoctail.type} required>
                         <option disabled defaultValue={thisCoctail.type} selected/>
                         <option defaultValue="Alkoholowy">Alkoholowy</option>
@@ -102,7 +101,7 @@ export default function EditCoctail() {
                     <textarea {...register('steps')} rows="6" cols="75" required
                               defaultValue={thisCoctail.steps.join('')}/>
                     <button
-                        className="register"
+                        className="register btn btn-success"
                         type="submit"
                     >
                         Wyślij
