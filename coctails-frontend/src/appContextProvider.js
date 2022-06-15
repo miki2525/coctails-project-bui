@@ -1,6 +1,6 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
-import coctailsData from './data/coctails.json';
-import commentsData from './data/comments.json';
+// import coctailsData from './data/coctails.json';
+// import commentsData from './data/comments.json';
 
 const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
