@@ -1,5 +1,4 @@
 const dataAlaDB = require('./alaDB/adminCred.json');
-process.env.PWD = process.cwd();
 const path = require('path');
 const express = require("express");
 const PORT = process.env.PORT || 3001;
@@ -9,12 +8,14 @@ const bcrypt = require("bcrypt");
 const fs = require('fs');
 const cors = require('cors');
 const PDFDocument = require('pdfkit');
+const multer = require('multer');
+process.env.PWD = process.cwd();
 
 app.use(express.static(path.resolve(__dirname, '../coctails-frontend/build')));
 app.use(express.static(process.env.PWD + '/coctails-frontend/src/data/images'));
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 
 //todo move data on server-side
 var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json";
@@ -24,6 +25,28 @@ var PATH_TO_PUBLIC = process.env.PWD + "/server/public/";
 var PATH_TO_FONTS = process.env.PWD + "/server/fonts/";
 var PDF_COCTAILS_DIR = "pdfCoctails/";
 var PDF_FILE_EXTENSION = ".pdf";
+
+const upload = multer({
+    storage: multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, PATH_TO_IMAGES);
+        },
+        filename: function (req, file, cb) {
+            const extension = file.mimetype.split('/')[1];
+            const coctail = JSON.parse(req.body.coctail);
+            let nameNoWhitespace = coctail.name.replace(/\s/g, '');
+            const fileName =  nameNoWhitespace + '.' + extension;
+            cb(null, fileName);
+        }
+    }),
+    limits: {
+        fileSize: 1024 * 1024 * 5 // MB
+    },
+    fileFilter: (req, file, cb) => {
+        let valid = file.mimetype.includes('image/');
+        cb(null, valid);
+    },
+});
 
 app.get('/api/getData', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COMMENTS);
@@ -72,15 +95,15 @@ app.post('/comments/saveComment', (req, res) => {
     res.send(dataToSave);
 });
 
-app.post('/coctails/createCoctail', (req, res) => {
-    const reqData = req.body;
-    console.log(reqData)
-    // console.log(reqData.name);
-    //  cosnole.log("FILE");
-    //  console.log(req.files);
-    //  console.log(req.name);
-    // console.log("BODY");
-    // console.log(req.body);
+app.post('/coctails/createCoctail', upload.single("file"), (req, res) => {
+    const reqData = JSON.parse(req.body.coctail);
+    const image = req.file;
+    if(image !== undefined){
+        reqData.image = '/' + image.filename;
+    }
+    else{
+        reqData.image = "/noPhoto.jpg";
+    }
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const createdCoctail = createCoctail(reqData, true);
@@ -90,7 +113,6 @@ app.post('/coctails/createCoctail', (req, res) => {
     });
 
     createdCoctail.id = coctails.length + 1;
-    createdCoctail.image = "/noPhoto.jpg";
     coctails.push(createdCoctail);
 
     let dataToSave = JSON.stringify(coctails, null, 2);
@@ -98,7 +120,7 @@ app.post('/coctails/createCoctail', (req, res) => {
     res.send(dataToSave);
 });
 
-app.post('/coctails/updateCoctail', (req, res) => {
+app.post('/coctails/updateCoctail', upload.single("file"), (req, res) => {
     const reqData = req.body;
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
@@ -227,7 +249,7 @@ const createCoctail = (data, createNew) => {
         coctail = {
             id: undefined,
             name: data.name,
-            image: "",
+            image: data.image,
             type: data.type,
             glass: data.glass,
             ratings: [],

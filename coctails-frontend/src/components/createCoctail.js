@@ -37,10 +37,6 @@ export default function CreateCoctail() {
     // }
 
     const submit = (data, e) => {
-        // const formData = new FormData();
-        // formData.append("file", data.file[0]);
-        // formData.append("data", data);
-        // console.log(formData)
         e.preventDefault();
         let errorIngr = document.getElementById("errorIngr");
         if (!ingredientsNotEmpty(data)) {
@@ -57,7 +53,7 @@ export default function CreateCoctail() {
                 <legend>Kreator Koktajlu</legend>
                 <form onSubmit={handleSubmit(submit)}>
                     <div>Nazwa <input type="text" {...register('name')} placeholder="Nazwa koktajlu" required/></div>
-                    {/*<div><input type="file" {...register("file")} accept='image/*' required/></div>*/}
+                    <div><input type="file" {...register("file")} accept='image/*' required/></div>
                     <div>Typ <select {...register('type')} placeholder="Typ" required>
                         <option disabled selected/>
                         <option defaultValue="Alkoholowy">Alkoholowy</option>

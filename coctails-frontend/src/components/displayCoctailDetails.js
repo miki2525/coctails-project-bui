@@ -54,7 +54,7 @@ export default function DisplayCoctailDetails() {
             </div>)}
 
             <div className="general">
-                <div><img className="imgCoctail" src={thisCoctail.image}/></div>
+                <div>{thisCoctail.image !== '/noPhoto.jpg' && (<img className="imgCoctail" src={thisCoctail.image}/>)}</div>
                 <div>
                     <h1>{thisCoctail.name}</h1>
                     <button className="btn btn-primary" onClick={() => downloadCoctail(parseInt(id))}>Pobierz przepis

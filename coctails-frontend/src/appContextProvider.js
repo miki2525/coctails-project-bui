@@ -1,13 +1,15 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
+import coctailsData from './data/coctails.json';
+import commentsData from './data/comments.json';
 
 const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
-{/*//todo move data on server-side*/}
+
 export default function AppContextProvider({children}) {
-    const [coctails, setCoctails] = useState('');
-    const [comments, setComments] = useState('');
-    const [coctailsSearch, setCoctailsSearch] = useState('');
-    const [loading, setLoading] = useState(true);
+    const [coctails, setCoctails] = useState(''); //reset to ''
+    const [comments, setComments] = useState(''); //reset
+    const [coctailsSearch, setCoctailsSearch] = useState(''); //reset
+    const [loading, setLoading] = useState(true); //set to true
     const [authenticated_AdminRole, setAuthenticated_AdminRole] = useState(false);
 
     useEffect(() => {
@@ -56,13 +58,19 @@ export default function AppContextProvider({children}) {
         }
         //save(create)
         else {
-            // headers: {'Content-Type': 'multipart/form-data'},
+            const formData = new FormData();
+            const file = coctailToSave.file[0];
+            delete coctailToSave.file;
+            formData.append("coctail", JSON.stringify(coctailToSave));
+            formData.append("file", file);
+            delete coctailToSave.file;
+
+
             const requestOptions = {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(coctailToSave)
+                // headers: {'Content-Type': 'multipart/form-data'},
+                body: formData
             };
-
             fetch('/coctails/createCoctail', requestOptions)
                 .then(response => {
                     if (response.ok) {
@@ -114,8 +122,8 @@ export default function AppContextProvider({children}) {
         }
     }
 
-    const deleteCoctail = (id) =>{
-        if(window.confirm("Czy napewno chcesz usunąć ten koktajl")){
+    const deleteCoctail = (id) => {
+        if (window.confirm("Czy napewno chcesz usunąć ten koktajl")) {
             const idToSend = {id: id};
             const requestOptions = {
                 method: 'POST',
@@ -139,14 +147,13 @@ export default function AppContextProvider({children}) {
                         console.log("SERVER ERROR - deleteCoctail()");
                     }
                 })
-        }
-        else {
+        } else {
             console.log("ANULOWANO USUNIĘCIE KOKTAJLU id:" + id)
         }
     }
 
-    const deleteComment = (id) =>{
-        if(window.confirm("Czy napewno chcesz usunąć ten komentarz")){
+    const deleteComment = (id) => {
+        if (window.confirm("Czy napewno chcesz usunąć ten komentarz")) {
             const idToSend = {id: id};
             const requestOptions = {
                 method: 'POST',
@@ -170,8 +177,7 @@ export default function AppContextProvider({children}) {
                         console.log("SERVER ERROR - deleteComment()");
                     }
                 })
-        }
-        else {
+        } else {
             console.log("ANULOWANO USUNIĘCIE KOMENTARZA id:" + id)
         }
     }
