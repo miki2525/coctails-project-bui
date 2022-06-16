@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
-import '../styles/coctail.scss'
+import '../../styles/coctail/coctail.scss'
 import {Trash} from "react-bootstrap-icons";
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../appContextProvider";
 
 export default function Coctail({id, name, image, type}) {
     const {authenticated_AdminRole, deleteCoctail} = useAppCtx();

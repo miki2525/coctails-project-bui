@@ -1,8 +1,8 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../appContextProvider";
 import {Navigate} from "react-router-dom";
-import '../styles/adminForm.scss'
+import '../../styles/adminPanel/adminForm.scss'
 
 export default function AdminLogin() {
     const {register, handleSubmit, formState: {errors}} = useForm();

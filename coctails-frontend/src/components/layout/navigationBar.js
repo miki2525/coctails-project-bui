@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavLink, useLocation} from 'react-router-dom';
 import Search from "./search";
-import '../styles/navigationBar.scss'
+import '../../styles/layout/navigationBar.scss'
 import {House, PlusCircle} from 'react-bootstrap-icons'
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../appContextProvider";
 
 export default function NavigationBar() {
     const {authenticated_AdminRole} = useAppCtx();

@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import '../styles/notFound.scss'
+import '../../../styles/layout/404/notFound.scss'
 
 export default function PageNotFound() {
     return (

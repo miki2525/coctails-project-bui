@@ -1,6 +1,6 @@
 import React from "react";
 import {Trash2} from "react-bootstrap-icons";
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../../appContextProvider";
 
 export default function Comments({comments}) {
     const {authenticated_AdminRole, deleteComment} = useAppCtx();

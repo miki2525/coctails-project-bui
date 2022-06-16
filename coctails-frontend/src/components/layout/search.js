@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAppCtx} from '../appContextProvider';
+import {useAppCtx} from '../../appContextProvider';
 import {useLocation} from 'react-router-dom';
 
 export default function Search() {

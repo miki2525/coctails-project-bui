@@ -1,14 +1,14 @@
 import React from "react"
 import {Route, Routes, BrowserRouter, Navigate, NavLink} from 'react-router-dom'
-import NavigationBar from "./components/navigationBar";
-import PageNotFound from "./components/pageNotFound";
-import About from "./components/about";
-import DisplayCoctails from "./components/displayCoctails";
-import DisplayCoctailDetails from "./components/displayCoctailDetails";
-import AdminLogin from "./components/adminLogin";
+import NavigationBar from "./components/layout/navigationBar";
+import PageNotFound from "./components/layout/404/pageNotFound";
+import About from "./components/layout/about";
+import DisplayCoctails from "./components/layout/displayCoctails";
+import DisplayCoctailDetails from "./components/coctail/displayCoctailDetails";
+import AdminLogin from "./components/adminPanel/adminLogin";
 import {useAppCtx} from "./appContextProvider";
-import EditCoctail from "./components/editCoctail";
-import CreateCoctail from "./components/createCoctail";
+import EditCoctail from "./components/coctail/editCoctail";
+import CreateCoctail from "./components/coctail/createCoctail";
 import Footer from "./components/layout/footer";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
     if (document.cookie.indexOf("logout") !== -1) {
         alert("logout")
     }
-    // if (loading) {
-    //     return <p>LOADING . . .</p>
-    // }
+    if (loading) {
+        return <p>LOADING . . .</p>
+    }
     return (
         <BrowserRouter>
             <div className="adminPanel">

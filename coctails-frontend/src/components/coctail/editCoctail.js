@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../appContextProvider";
 import {Navigate, useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
-import {ingredientsNotEmpty} from "../utils/coctailValidator";
+import {ingredientsNotEmpty} from "../../utils/coctailValidator";
 
 export default function EditCoctail() {
-    const {getCoctailDetails, getComments, authenticated_AdminRole, saveCoctails} = useAppCtx();
+    const {getCoctailDetails , authenticated_AdminRole, saveCoctails} = useAppCtx();
     const {id} = useParams();
     const {register, handleSubmit} = useForm();
     const [ingredients, setIngredients] = useState([]);
@@ -27,10 +27,6 @@ export default function EditCoctail() {
         return (<Navigate to="/404"/>)
     }
 
-
-    const thisComments = getComments(parseInt(id));
-
-
     const addElement = () => {
         const addedIndex = [...ingredients];
         addedIndex.push({
@@ -47,11 +43,6 @@ export default function EditCoctail() {
     //     );
     //     setIngredients(deletedIndex);
     // }
-
-    const isNotEmpty = (data) => {
-        return Object.keys(data).filter((prop) => prop.includes("nameIngr"))
-            .some((nameIngr) => data[nameIngr] !== "");
-    }
 
     const submit = (data, e) => {
         e.preventDefault();

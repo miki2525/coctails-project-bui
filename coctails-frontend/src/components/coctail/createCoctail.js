@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../appContextProvider";
 import {useForm} from "react-hook-form";
 import {Navigate} from "react-router-dom";
 import {PlusSquareDotted} from "react-bootstrap-icons";
-import {ingredientsNotEmpty} from "../utils/coctailValidator";
-import '../styles/coctailForm.scss'
+import {ingredientsNotEmpty} from "../../utils/coctailValidator";
+import '../../styles/coctail/coctailForm.scss'
 
 export default function CreateCoctail() {
     const {authenticated_AdminRole, saveCoctails} = useAppCtx();

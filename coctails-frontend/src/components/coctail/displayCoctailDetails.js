@@ -1,12 +1,12 @@
 import React from 'react';
-import {useAppCtx} from '../appContextProvider';
+import {useAppCtx} from '../../appContextProvider';
 import {Navigate, useNavigate, useParams} from 'react-router-dom'
 import Rates from "./rates";
-import IngredientsList from "./ingredientsList";
-import Instructions from "./instructions";
-import Comments from "./comments";
-import '../styles/coctailDetails.scss'
-import AddComment from "./addComment";
+import IngredientsList from "./ingredient/ingredientsList";
+import Instructions from "./instruction/instructions";
+import Comments from "./comment/comments";
+import '../../styles/coctail/coctailDetails.scss'
+import AddComment from "./comment/addComment";
 import {Trash} from 'react-bootstrap-icons'
 
 export default function DisplayCoctailDetails() {

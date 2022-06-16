@@ -1,5 +1,5 @@
 import {useForm} from 'react-hook-form'
-import {useAppCtx} from "../appContextProvider";
+import {useAppCtx} from "../../../appContextProvider";
 
 export default function AddComment({idCoctail}) {
     const {register, handleSubmit} = useForm();

@@ -17,12 +17,11 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 
-//todo move data on server-side
-var PATH_TO_COMMENTS = process.env.PWD + "/coctails-frontend/src/data/comments.json";
-var PATH_TO_COCTAILS = process.env.PWD + "/coctails-frontend/src/data/coctails.json";
+var PATH_TO_COMMENTS = process.env.PWD + "/server/data/comments.json";
+var PATH_TO_COCTAILS = process.env.PWD + "/server/data/coctails.json";
 var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
 var PATH_TO_PUBLIC = process.env.PWD + "/server/public/";
-var PATH_TO_FONTS = process.env.PWD + "/server/fonts/";
+var PATH_TO_FONTS = process.env.PWD + PATH_TO_PUBLIC + "fonts/";
 var PDF_COCTAILS_DIR = "pdfCoctails/";
 var PDF_FILE_EXTENSION = ".pdf";
 

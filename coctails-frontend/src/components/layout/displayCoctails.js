@@ -1,7 +1,7 @@
 import React from 'react';
-import {useAppCtx} from '../appContextProvider';
-import Coctail from "./coctail";
-import '../styles/coctailWrapper.scss'
+import {useAppCtx} from '../../appContextProvider';
+import Coctail from "../coctail/coctail";
+import '../../styles/layout/coctailWrapper.scss'
 
 export default function DisplayCoctails() {
     const {coctails} = useAppCtx();
