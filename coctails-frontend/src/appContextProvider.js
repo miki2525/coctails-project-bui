@@ -1,6 +1,6 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
-// import coctailsData from './data/coctails.json';
-// import commentsData from './data/comments.json';
+// import coctailsData from './coctails.json';
+// import commentsData from './comments.json';
 
 const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
@@ -217,10 +217,13 @@ export default function AppContextProvider({children}) {
                     var a = document.createElement('a');
                     a.href = url;
                     let requestedCoctail = coctails.find((coctail) => coctail.id === id);
-                    a.download = requestedCoctail.name + ".pdf";
+                    a.download = requestedCoctail.name.replace(/\s/g, '').toLowerCase() + ".pdf";
                     document.body.appendChild(a);
                     a.click();
-                    a.remove();
+                    setTimeout(function () {
+                            window.URL.revokeObjectURL(url);
+                        }
+                        , 100)
                 } else {
                     console.log("SERVER ERROR - downloadCoctail()");
                 }

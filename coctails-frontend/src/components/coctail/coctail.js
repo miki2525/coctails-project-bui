@@ -18,7 +18,8 @@ export default function Coctail({id, name, image, type}) {
     }
 
     return (
-        <div className="col-xl-12 col-lg-4 col-md-6 col-sm-12">
+        <div
+            className={!authenticated_AdminRole ? "col-xl-12 col-lg-4 col-md-6 col-sm-12" : "col-xl-3 col-lg-1 col-md-1 col-sm-3 admin"}>
             <div className="coctail">
                 <figure><img className="imgCoctail" src={image}/></figure>
                 <h1>{name}</h1>

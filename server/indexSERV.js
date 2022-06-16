@@ -21,7 +21,7 @@ var PATH_TO_COMMENTS = process.env.PWD + "/server/data/comments.json";
 var PATH_TO_COCTAILS = process.env.PWD + "/server/data/coctails.json";
 var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
 var PATH_TO_PUBLIC = process.env.PWD + "/server/public/";
-var PATH_TO_FONTS = process.env.PWD + PATH_TO_PUBLIC + "fonts/";
+var PATH_TO_FONTS = process.env.PWD + "/server/public/fonts/";
 var PDF_COCTAILS_DIR = "pdfCoctails/";
 var PDF_FILE_EXTENSION = ".pdf";
 
@@ -34,7 +34,7 @@ const upload = multer({
             const extension = file.mimetype.split('/')[1];
             const coctail = JSON.parse(req.body.coctail);
             let nameNoWhitespace = coctail.name.replace(/\s/g, '');
-            const fileName =  nameNoWhitespace + '.' + extension;
+            const fileName = nameNoWhitespace + '.' + extension;
             cb(null, fileName);
         }
     }),
@@ -97,10 +97,9 @@ app.post('/comments/saveComment', (req, res) => {
 app.post('/coctails/createCoctail', upload.single("file"), (req, res) => {
     const reqData = JSON.parse(req.body.coctail);
     const image = req.file;
-    if(image !== undefined){
+    if (image !== undefined) {
         reqData.image = '/' + image.filename;
-    }
-    else{
+    } else {
         reqData.image = "/noPhoto.jpg";
     }
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
@@ -122,7 +121,7 @@ app.post('/coctails/createCoctail', upload.single("file"), (req, res) => {
 app.post('/coctails/updateCoctail', upload.single("file"), (req, res) => {
     const reqData = JSON.parse(req.body.coctail);
     const image = req.file;
-    if(image !== undefined){
+    if (image !== undefined) {
         reqData.image = '/' + image.filename;
     }
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
@@ -138,7 +137,7 @@ app.post('/coctails/updateCoctail', upload.single("file"), (req, res) => {
             console.log(image);
             console.log(c.name.replace(/\s/g, ''));
             console.log(coctailToUpdate.name.replace(/\s/g, ''));
-            if (c.name.replace(/\s/g, '') !== coctailToUpdate.name.replace(/\s/g, '') && image === undefined){
+            if (c.name.replace(/\s/g, '') !== coctailToUpdate.name.replace(/\s/g, '') && image === undefined) {
                 coctailToUpdate.image = "/noPhoto.jpg";
             }
             Object.assign(c, coctailToUpdate);
@@ -174,17 +173,15 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
-    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
+    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
     if (!fs.existsSync(pathToFile)) {
         loadCoctailDataToPDF(pathToFile, requestedCoctail);
     }
-    let file = fs.createReadStream(pathToFile);
-    file.on('end', function () {
-        fs.unlink(pathToFile, function () {
-            console.log(pathToFile + " DELETED")
-        });
+    let stream = fs.createReadStream(pathToFile);
+    stream.pipe(res).once("close", function () {
+        stream.destroy(); // makesure stream closed, not close if download aborted.
+        deleteFile(pathToFile);
     });
-    file.pipe(res);
 });
 
 app.post('/coctails/deleteCoctail', (req, res) => {
@@ -277,11 +274,21 @@ const createCoctail = (data, createNew) => {
             ingredients: ingredients,
             steps: steps
         }
-        if (data.image !== undefined){
+        if (data.image !== undefined) {
             coctail.image = data.image;
         }
     }
     return coctail;
+}
+
+const deleteFile = (file) => {
+    fs.unlink(file, function (err) {
+        if (err) {
+            console.error(err.toString());
+        } else {
+            console.warn(file + ' deleted');
+        }
+    });
 }
 
 const loadCoctailDataToPDF = (pathToFile, coctail) => {
@@ -340,7 +347,7 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
     coctail.steps.forEach((step, index) => {
         doc
             .moveDown()
-            .text(index + 1 + ". " + step + ".");
+            .text(index + 1 + ". " + step);
     })
     doc.end();
 }

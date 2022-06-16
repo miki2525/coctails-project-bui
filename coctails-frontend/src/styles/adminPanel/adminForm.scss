@@ -1,13 +1,14 @@
-.adminForm{
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+.adminForm {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 
 
-  legend{
+  legend {
     font-weight: bold;
     text-align: center;
   }
+
   input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -18,7 +19,7 @@
     box-sizing: border-box;
   }
 
-  .resAdmin, .zalAdmin{
+  .resAdmin, .zalAdmin {
     width: 100%;
     color: white;
     padding: 14px 20px;
@@ -28,12 +29,17 @@
     cursor: pointer;
   }
 
-  .resAdmin{
+  .resAdmin {
     background-color: orangered;
   }
-  .zalAdmin{
+
+  .zalAdmin {
     background-color: blue;
   }
 
+  #errorFieldAdmin {
+    color: red;
+    font-weight: bold;
+  }
 
 }
