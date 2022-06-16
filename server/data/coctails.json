@@ -189,7 +189,7 @@
   {
     "id": 5,
     "name": "Pina Colada",
-    "image": "/pinacolada.jpg",
+    "image": "/pinaColada.jpg",
     "type": "Alkoholowy",
     "glass": "Hurricane",
     "ratings": [
