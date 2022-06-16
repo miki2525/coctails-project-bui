@@ -1,4 +1,4 @@
-# COCTAILS PROJECT
+# <p align="center">COCTAILS PROJECT</p>
 
 Aplikacja przedstawia listę koktajli. <br/>
 Link do aplikacji: **https://coctails-project.herokuapp.com**
