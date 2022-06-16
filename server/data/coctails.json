@@ -490,5 +490,374 @@
       "Energicznie potrząsamy całością.",
       "Przelewamy do kieliszków przy pomocy sitka, tak by kostki lodu nie wpadły do środka."
     ]
+  },
+  {
+    "id": 12,
+    "name": "Koktajl malinowy odchudzający",
+    "image": "/malinowyOdchu.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Highball",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Jogurt naturalny <1.5% tłuszczu",
+        "amount": "175",
+        "measurement": "g"
+      },
+      {
+        "name": "Otręby pszenne",
+        "amount": "10",
+        "measurement": "g"
+      },
+      {
+        "name": "Świeże lub mrożone maliny",
+        "amount": "150",
+        "measurement": "g"
+      }
+    ],
+    "steps": [
+      "Maliny dokładnie umyć (w przypadku stosowania mrożonych owoców, po wyjęciu ich z zamrażalnika, nie należy ich całkowicie rozmrażać).",
+      "Do naczynia z malinami dodać jogurt oraz otręby.",
+      "Wszystkie składniki dokładnie zmiksować."
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Tequila Sunrise",
+    "image": "/tequilaSunrise.jpg",
+    "type": "Alkoholowy",
+    "glass": "Hurricane",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Tequila",
+        "amount": "60",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sok pomarańczowy",
+        "amount": "120",
+        "measurement": "ml"
+      },
+      {
+        "name": "Grenadyna",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Tequilę i sok pomarańczowy wlej do szklanki wypełnionej kostkami lodu, dobrze wymieszaj.",
+      "Następnie wlej delikatnie grenadyna, aby osiadła na dno.",
+      "Całość możesz ozdobić kawałkiem pomarańczy."
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Smoothie Granat & Pomarańcza",
+    "image": "/smoothieGranPom.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Copita",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Granat",
+        "amount": "1",
+        "measurement": ""
+      },
+      {
+        "name": "Pomarańcze",
+        "amount": "2",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Granat rozkrój i wydłub jadalne pestki. Pomarańcze obierz i pozbądź się z nich pestek.",
+      "Następnie pestki granatu i pomarańcze w kawałkach umieść w blenderze i dobrze zmiksuj. Przelej do szklanki.",
+      "Jeśli chcesz dodać kostki lodu, dodaj je po zmiksowaniu składników, i włącz blender ponownie do rozkruszenia kostek."
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Smoothie Szpinak & Brzoskwinia",
+    "image": "/smoothieSzpinBrzosk.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Hurricane",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Szpinak",
+        "amount": "2",
+        "measurement": "szklanki"
+      },
+      {
+        "name": "Jogurt naturalny lub waniliowy",
+        "amount": "1",
+        "measurement": "szklanka"
+      },
+      {
+        "name": "Winogrona",
+        "amount": "0.5",
+        "measurement": "szklanki"
+      },
+      {
+        "name": "Avokado",
+        "amount": "1",
+        "measurement": ""
+      },
+      {
+        "name": "Brzoskwinie",
+        "amount": "2",
+        "measurement": ""
+      },
+      {
+        "name": "Banan",
+        "amount": "0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Miód",
+        "amount": "1",
+        "measurement": "łyżeczka"
+      }
+    ],
+    "steps": [
+      "Brzoskwinie i avokado obierz i pokrój w kostkę. Następnie wszystkie składniki umieść w blenderze i dobrze zmiksuj.",
+      "Przelej wszystko do szklanki. Na jej wierzch możesz wrzucić plastry banana czy winogrona."
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Jagodzianka",
+    "image": "/jagodzianka.jpg",
+    "type": "Alkoholowy",
+    "glass": "Shot",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Malibu lub wódka",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Mleczko skondensowane lub śmietanka",
+        "amount": "10",
+        "measurement": "ml"
+      },
+      {
+        "name": "Grenadyna",
+        "amount": "7",
+        "measurement": "ml"
+      },
+      {
+        "name": "Blue Curacao",
+        "amount": "3",
+        "measurement": "ml"
+      }
+    ],
+    "steps": [
+      "Wszystkie składniki wstrząśnij dobrze w shakerze z kostkami lodu.",
+      "Następnie przecedź zawartość shakera do kieliszka / ów."
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Jack Sparrow",
+    "image": "/jackSparrow.jpg",
+    "type": "Alkoholowy",
+    "glass": "Shot",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Biały rum",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Malibu",
+        "amount": "10",
+        "measurement": "ml"
+      },
+      {
+        "name": "Grenadyna",
+        "amount": "7",
+        "measurement": "ml"
+      },
+      {
+        "name": "Blue Curacao",
+        "amount": "kilka",
+        "measurement": "kropel"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Wszystkie składniki wraz z kostkami lodu wrzucamy do shakera i dobrze wstrząsamy.",
+      "Zawartość shakera odcedzamy do kieliszka czy też kieliszków, jeśli przygotowaliśmy porcje na więcej."
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Pink Lady",
+    "image": "/pinkLady.jpg",
+    "type": "Alkoholowy",
+    "glass": "Coctail",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Malibu",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Mleczko skondensowane lub śmietanka",
+        "amount": "80",
+        "measurement": "ml"
+      },
+      {
+        "name": "Grenadyna",
+        "amount": "25",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Do shakera wrzucamy kilka kostek lodu i resztę składników i mocno wstrząsamy aby spienić lekko mleko.",
+      "Możemy wcześniej przygotować kieliszek ozdabiając go crustą z cukru i grenadyny.",
+      "Przecedzamy do kieliszka, zostawiając resztki kostek lodu w shakerze"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Smoothie Truskawka & Orzeźwienie",
+    "image": "/smoothieTruskOrz.jpg",
+    "type": "Bezalkoholowy",
+    "glass": "Mason Jar",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Truskawki",
+        "amount": "2",
+        "measurement": "szklanki"
+      },
+      {
+        "name": "Cytryna",
+        "amount": "1/4 lub 0.5",
+        "measurement": "szt"
+      },
+      {
+        "name": "Woda",
+        "amount": "0.5",
+        "measurement": "szklanki"
+      },
+      {
+        "name": "Mięta",
+        "amount": "kilka",
+        "measurement": "liści"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Z truskawek usunąć szypułki i wycisnąć sok z cytryny. Umieścić wraz z wodą w blenderze i dobrze zmiksować.",
+      "Dodać kostki lodu i włączyć blender ponownie aby skruszyć lód.",
+      "Przelać do szklanki i podawać z miętą (opcjonalnie)."
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Błękitna Laguna",
+    "image": "/blekitnaLaguna.jpg",
+    "type": "Alkoholowy",
+    "glass": "Collins",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Wódka",
+        "amount": "50",
+        "measurement": "ml"
+      },
+      {
+        "name": "Blue Curacao",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Sprite lub lemoniada",
+        "amount": "do wypełnienia",
+        "measurement": ""
+      },
+      {
+        "name": "Sok z cytryny",
+        "amount": "kilka",
+        "measurement": "kropel"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Do szklanki wrzucamy kostki lodu.",
+      "Wlewamy wódkę i Blue Curacao i sok z cytryny.",
+      "Dolewamy sprite do uzupełnienia.",
+      "Całość możemy ozdobić cytryną, wrzucić plaster cytryny do szklanki."
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Jager o poranku",
+    "image": "/jagerPoranek.jpg",
+    "type": "Alkoholowy",
+    "glass": "Hurricane",
+    "ratings": [],
+    "ingredients": [
+      {
+        "name": "Jagermeister",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "syrop Blue Curacao",
+        "amount": "20",
+        "measurement": "ml"
+      },
+      {
+        "name": "Wódka",
+        "amount": "40",
+        "measurement": "ml"
+      },
+      {
+        "name": "Syrop grejfrutowy",
+        "amount": "100-150",
+        "measurement": "ml"
+      },
+      {
+        "name": "Lód",
+        "amount": "",
+        "measurement": ""
+      }
+    ],
+    "steps": [
+      "Do szklanki wypełnionej częściowo kostkami lodu wlewamy sok grejpfrutowy z wódką.",
+      "Następnie syrop Blue Curacao, ma on opaść na dno tworząc pierwszą warstwę.",
+      "Na końcu na sam wierch po kostkach lodu bądź łyżce wlewamy likier Jagermeister, tworząc ostatnią warstwę.",
+      "Szklankę drinka możemy przyozdobić kawałkiem grejpfruta."
+    ]
   }
 ]

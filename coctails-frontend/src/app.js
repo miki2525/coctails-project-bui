@@ -36,6 +36,7 @@ function App() {
                     <Route path="/coctail/:id" exact element={<DisplayCoctailDetails/>}/>
                     <Route path="/coctailEdit/:id" exact element={<EditCoctail/>}/>
                     <Route path="/createCoctail" exact element={<CreateCoctail/>}/>
+                    {/*<Route exact path="/tables" element={<Tables/>}/>*/}
                     <Route exact path="/about" element={<About/>}/>
                     <Route exact path="/api/adminLogin" element={<AdminLogin/>}/>
 
