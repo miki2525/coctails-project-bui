@@ -9,6 +9,7 @@ import AdminLogin from "./components/adminLogin";
 import {useAppCtx} from "./appContextProvider";
 import EditCoctail from "./components/editCoctail";
 import CreateCoctail from "./components/createCoctail";
+import Footer from "./components/layout/footer";
 
 function App() {
     const {authenticated_AdminRole, setAuthenticated_AdminRole, loading} = useAppCtx();
@@ -16,9 +17,9 @@ function App() {
     if (document.cookie.indexOf("logout") !== -1) {
         alert("logout")
     }
-    if (loading) {
-        return <p>LOADING . . .</p>
-    }
+    // if (loading) {
+    //     return <p>LOADING . . .</p>
+    // }
     return (
         <BrowserRouter>
             <div className="adminPanel">
@@ -43,6 +44,7 @@ function App() {
                     <Route path="/404" element={<PageNotFound/>}/>
                 </Routes>
             </div>
+            <Footer/>
         </BrowserRouter>
     );
 

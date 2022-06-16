@@ -43,7 +43,6 @@ export default function AdminLogin() {
                 <button className="resAdmin" value="Reset" type="reset">Reset</button>
                 <div id="errorFieldAdmin"/>
             </form>
-            <label>* login: admin pass: admin *</label>
         </fieldset>
     );
 

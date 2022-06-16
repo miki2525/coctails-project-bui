@@ -345,10 +345,3 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
     })
     doc.end();
 }
-
-//
-// function crypt(){
-//    bcrypt.hash("admin",0, (err, hash)=>{
-//        console.log(hash);
-//    });
-// }
