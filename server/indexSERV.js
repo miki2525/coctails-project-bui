@@ -173,17 +173,24 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
-    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
+    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
-        loadCoctailDataToPDF(pathToFile, requestedCoctail);
+        let writeStream = loadCoctailDataToPDF(pathToFile, requestedCoctail);
+        writeStream.on('finish', function () {
+            let stream = fs.createReadStream(pathToFile);
+            stream.pipe(res).once("close", function () {
+                stream.destroy(); // makesure stream closed, not close if download aborted.
+                deleteFile(pathToFile);
+            });
+        });
+    } else {
+        let stream = fs.createReadStream(pathToFile);
+        stream.pipe(res).once("close", function () {
+            stream.destroy(); // makesure stream closed, not close if download aborted.
+            deleteFile(pathToFile);
+        });
     }
-    console.log("STATUS UTWORZENIA PLIKU PDF:" + fs.existsSync(pathToFile));
-    let stream = fs.createReadStream(pathToFile);
-    stream.pipe(res).once("close", function () {
-        stream.destroy(); // makesure stream closed, not close if download aborted.
-        deleteFile(pathToFile);
-    });
 });
 
 app.post('/coctails/deleteCoctail', (req, res) => {
@@ -295,8 +302,8 @@ const deleteFile = (file) => {
 
 const loadCoctailDataToPDF = (pathToFile, coctail) => {
     const doc = new PDFDocument();
-    let writer = fs.createWriteStream(pathToFile);
-    doc.pipe(writer);
+    const writeStream = fs.createWriteStream(pathToFile);
+    doc.pipe(writeStream);
     // Tittle
     doc
         .fontSize(12)
@@ -352,6 +359,6 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .moveDown()
             .text(index + 1 + ". " + step);
     })
-    writer.end();
     doc.end();
+    return writeStream;
 }
