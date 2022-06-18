@@ -300,7 +300,7 @@ const deleteFile = (file) => {
     });
 }
 
-const loadCoctailDataToPDF = (pathToFile, coctail) => {
+const loadCoctailDataToPDF = async (pathToFile, coctail) => {
     const doc = new PDFDocument();
     const writeStream = fs.createWriteStream(pathToFile);
     doc.pipe(writeStream);
@@ -359,8 +359,8 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .moveDown()
             .text(index + 1 + ". " + step);
     })
-    doc.end();
-    writeStream.on('finish', function (){
+    await doc.end();
+    writeStream.on('finish', function () {
         console.log("FILE CREATED: " + fs.existsSync(pathToFile))
     })
     return writeStream;
