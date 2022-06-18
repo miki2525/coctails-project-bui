@@ -173,7 +173,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
-    const pathToFile = __dirname + "/" + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
+    const pathToFile = __dirname + "/public/pdfCoctails/" + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
         const writeStream = loadCoctailDataToPDF(pathToFile, requestedCoctail);
