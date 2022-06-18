@@ -1,15 +1,15 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
-// import coctailsData from './coctails.json';
-// import commentsData from './comments.json';
+import coctailsData from './coctails.json';
+import commentsData from './comments.json';
 
 const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
 
 export default function AppContextProvider({children}) {
-    const [coctails, setCoctails] = useState(''); //reset to ''
-    const [comments, setComments] = useState(''); //reset
+    const [coctails, setCoctails] = useState(coctailsData); //reset to ''
+    const [comments, setComments] = useState(commentsData); //reset
     const [coctailsSearch, setCoctailsSearch] = useState(''); //reset
-    const [loading, setLoading] = useState(true); //set to true
+    const [loading, setLoading] = useState(false); //set to true
     const [authenticated_AdminRole, setAuthenticated_AdminRole] = useState(false);
 
     useEffect(() => {

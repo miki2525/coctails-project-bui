@@ -14,7 +14,7 @@ export const COCTAIL = "Coctail"
 export const MASON_JAR = "Mason Jar"
 export const COLLINS = "Collins"
 //todo (update glasses or implement logic for adding new glass after creating new coctail)
-export const arrayGlass = [HIGHBALL, MARGARITA, HURRICANE, SHOT, LOWBALL, COPITA, COPITA, COCTAIL, MASON_JAR, COLLINS]
+export const arrayGlass = [HIGHBALL, MARGARITA, HURRICANE, SHOT, LOWBALL, COPITA, COCTAIL, MASON_JAR, COLLINS]
 
 //alkohol
 export const VODKA = "Wódka"
