@@ -191,7 +191,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
             .moveDown()
             .fontSize(16)
             .font(PATH_TO_FONTS + "timesBold.ttf")
-            .text(coctail.name, {
+            .text(requestedCoctail.name, {
                 width: 410,
                 align: 'center',
                 underline: true
@@ -214,7 +214,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
             })
             .fontSize(12)
             .font(PATH_TO_FONTS + "times.ttf");
-        coctail.ingredients.forEach((ingr, index) => {
+        requestedCoctail.ingredients.forEach((ingr, index) => {
             doc
                 .moveDown()
                 .text(index + 1 + ". " + ingr.name + " " + ingr.amount + " " + ingr.measurement);
@@ -230,7 +230,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
             })
             .fontSize(12)
             .font(PATH_TO_FONTS + "times.ttf");
-        coctail.steps.forEach((step, index) => {
+        requestedCoctail.steps.forEach((step, index) => {
             doc
                 .moveDown()
                 .text(index + 1 + ". " + step);
@@ -361,7 +361,7 @@ const deleteFile = (file) => {
     });
 }
 
-const loadCoctailDataToPDF = async (pathToFile, coctail) => {
+const loadCoctailDataToPDF = (pathToFile, coctail) => {
     const doc = new PDFDocument();
     const writeStream = fs.createWriteStream(pathToFile);
     doc.pipe(writeStream);
@@ -420,9 +420,5 @@ const loadCoctailDataToPDF = async (pathToFile, coctail) => {
             .moveDown()
             .text(index + 1 + ". " + step);
     })
-    await doc.end();
-    writeStream.on('finish', function () {
-        console.log("FILE CREATED: " + fs.existsSync(pathToFile))
-    })
-    return writeStream;
+    doc.end();
 }
