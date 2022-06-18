@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true}));
 var PATH_TO_COMMENTS = process.env.PWD + "/server/data/comments.json";
 var PATH_TO_COCTAILS = process.env.PWD + "/server/data/coctails.json";
 var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
-var PATH_TO_PUBLIC = __dirname + "/server/public/";
+var PATH_TO_PUBLIC = __dirname + "/public/";
 var PATH_TO_FONTS = process.env.PWD + "/server/public/fonts/";
 var PDF_COCTAILS_DIR = "pdfCoctails/";
 var PDF_FILE_EXTENSION = ".pdf";
@@ -174,13 +174,12 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
-
+    console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
         loadCoctailDataToPDF(pathToFile, requestedCoctail);
     }
     console.log("STATUS UTWORZENIA PLIKU PDF:" + fs.existsSync(pathToFile));
     let stream = fs.createReadStream(pathToFile);
-    res.send(true);
     stream.pipe(res).once("close", function () {
         stream.destroy(); // makesure stream closed, not close if download aborted.
         deleteFile(pathToFile);
@@ -296,8 +295,7 @@ const deleteFile = (file) => {
 
 const loadCoctailDataToPDF = (pathToFile, coctail) => {
     const doc = new PDFDocument();
-    let writer = fs.createWriteStream(pathToFile);
-    doc.pipe(writer);
+    doc.pipe(fs.createWriteStream(pathToFile));
     // Tittle
     doc
         .fontSize(12)
@@ -354,5 +352,4 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .text(index + 1 + ". " + step);
     })
     doc.end();
-    writer.end();
 }
