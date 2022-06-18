@@ -174,9 +174,9 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
-    if (!fs.existsSync(pathToFile)) {
+    // if (!fs.existsSync(pathToFile)) { //heroku throw error
         loadCoctailDataToPDF(pathToFile, requestedCoctail);
-    }
+    // }
     let stream = fs.createReadStream(pathToFile);
     stream.pipe(res).once("close", function () {
         stream.destroy(); // makesure stream closed, not close if download aborted.
