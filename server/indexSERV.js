@@ -179,7 +179,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     // }
     let stream = fs.createReadStream(pathToFile);
     stream.pipe(res).once("close", function () {
-        stream.destroy(); // makesure stream closed, not close if download aborted.
+        // stream.destroy(); // makesure stream closed, not close if download aborted.
         deleteFile(pathToFile);
     });
 });
