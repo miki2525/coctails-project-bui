@@ -177,7 +177,8 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
         const doc = new PDFDocument();
-        const writeStream = fs.createWriteStream(pathToFile);
+        const writeStream = fs.createWriteStream(__dirname+"/jajo.pdf");
+        console.log(writeStream);
         doc.pipe(writeStream);
         // Tittle
         doc
@@ -236,16 +237,15 @@ app.get('/coctails/downloadCoctail', (req, res) => {
         })
         doc.end();
         writeStream.on('finish', function () {
-            console.log("FILE CREATED: " + fs.existsSync(pathToFile))
-        })
-        writeStream.on('finish', function () {
-            let stream = fs.createReadStream(pathToFile);
+            console.log("FILE CREATED: " + fs.existsSync(__dirname+"/jajo.pdf"))
+            let stream = fs.createReadStream(__dirname+"/jajo.pdf");
             stream.pipe(res).once("close", function () {
                 stream.destroy(); // makesure stream closed, not close if download aborted.
-                deleteFile(pathToFile);
+                deleteFile(__dirname+"/jajo.pdf");
             });
         });
     } else {
+        console.log("FILE EXIST")
         let stream = fs.createReadStream(pathToFile);
         stream.pipe(res).once("close", function () {
             stream.destroy(); // makesure stream closed, not close if download aborted.
