@@ -360,5 +360,8 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .text(index + 1 + ". " + step);
     })
     doc.end();
+    writeStream.on('finish', function (){
+        console.log("FILE CREATED: " + fs.existsSync(pathToFile))
+    })
     return writeStream;
 }
