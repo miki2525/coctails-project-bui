@@ -8,7 +8,7 @@ const PLATFORM = "https://coctails-project.herokuapp.com/";
 
 export default function AppContextProvider({children}) {
     const [coctails, setCoctails] = useState(''); //reset to ''
-    const [comments, setComments] = useState('commentsData'); //reset
+    const [comments, setComments] = useState(''); //reset
     const [coctailsSearch, setCoctailsSearch] = useState(''); //reset
     const [loading, setLoading] = useState(true); //set to true
     const [authenticated_AdminRole, setAuthenticated_AdminRole] = useState(false);
