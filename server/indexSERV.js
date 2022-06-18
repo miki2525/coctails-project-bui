@@ -176,66 +176,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
-        const doc = new PDFDocument();
-        const writeStream = fs.createWriteStream(__dirname+"/jajo.pdf");
-        console.log(writeStream);
-        doc.pipe(writeStream);
-        // Tittle
-        doc
-            .fontSize(12)
-            .font(PATH_TO_FONTS + "times.ttf")
-            .text("Przepis na", {
-                width: 410,
-                align: 'center'
-            })
-            .moveDown()
-            .fontSize(16)
-            .font(PATH_TO_FONTS + "timesBold.ttf")
-            .text(requestedCoctail.name, {
-                width: 410,
-                align: 'center',
-                underline: true
-            });
-        //IMG
-        //     doc
-        //         .moveDown()
-        //         .image(PATH_TO_IMAGES + coctail.image, {
-        //         fit: [300, 300],
-        //         align: 'center',
-        //         valign: 'center'
-        //     });
-        //Ingredients
-        doc
-            .moveDown()
-            .fontSize(14)
-            .text("Składniki:", {
-                width: 410,
-                underline: true
-            })
-            .fontSize(12)
-            .font(PATH_TO_FONTS + "times.ttf");
-        requestedCoctail.ingredients.forEach((ingr, index) => {
-            doc
-                .moveDown()
-                .text(index + 1 + ". " + ingr.name + " " + ingr.amount + " " + ingr.measurement);
-        })
-        //Steps
-        doc
-            .moveDown()
-            .fontSize(14)
-            .font(PATH_TO_FONTS + "timesBold.ttf")
-            .text("Sposób przygotowania", {
-                width: 410,
-                underline: true
-            })
-            .fontSize(12)
-            .font(PATH_TO_FONTS + "times.ttf");
-        requestedCoctail.steps.forEach((step, index) => {
-            doc
-                .moveDown()
-                .text(index + 1 + ". " + step);
-        })
-        doc.end();
+        const writeStream = loadCoctailDataToPDF(__dirname+"/jajo.pdf");
         writeStream.on('finish', function () {
             console.log("FILE CREATED: " + fs.existsSync(__dirname+"/jajo.pdf"))
             let stream = fs.createReadStream(__dirname+"/jajo.pdf");
@@ -421,4 +362,5 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .text(index + 1 + ". " + step);
     })
     doc.end();
+    return writeStream;
 }
