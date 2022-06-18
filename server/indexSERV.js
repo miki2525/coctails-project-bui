@@ -174,12 +174,15 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
-    // if (!fs.existsSync(pathToFile)) { //heroku throw error
+
+    if (!fs.existsSync(pathToFile)) {
         loadCoctailDataToPDF(pathToFile, requestedCoctail);
-    // }
+    }
+    console.log(pathToFile);
     let stream = fs.createReadStream(pathToFile);
+    console.log(stream);
     stream.pipe(res).once("close", function () {
-        // stream.destroy(); // makesure stream closed, not close if download aborted.
+        stream.destroy(); // makesure stream closed, not close if download aborted.
         deleteFile(pathToFile);
     });
 });
@@ -293,6 +296,7 @@ const deleteFile = (file) => {
 
 const loadCoctailDataToPDF = (pathToFile, coctail) => {
     const doc = new PDFDocument();
+    console.log("BEFORE PDF")
     doc.pipe(fs.createWriteStream(pathToFile));
     // Tittle
     doc
@@ -350,4 +354,5 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .text(index + 1 + ". " + step);
     })
     doc.end();
+    console.log("END PDF")
 }
