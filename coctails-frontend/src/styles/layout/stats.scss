@@ -1,0 +1,37 @@
+.statsContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  h4 {
+  margin-left: 5px;
+  }
+
+  .types {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: black 4px dotted;
+    display: flex;
+    justify-content: space-evenly;
+
+    .typeBarChart {
+      height: 40vh;
+      width: 20%;
+    }
+  }
+
+  .glasses {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: black 4px dotted;
+    display: flex;
+    justify-content: space-evenly;
+
+    .glassDoughnutChart {
+      margin-top: 30px;
+      height: 40vh;
+      width: 20%;
+    }
+  }
+}

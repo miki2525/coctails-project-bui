@@ -16,16 +16,19 @@ export default function NavigationBar() {
     return (
         <div className="NavigationBar">
             <Search/>
-            {authenticated_AdminRole && (<div>
-                <NavLink className="link" to="/createCoctail"><PlusCircle size={22}/></NavLink>
-            </div>)
-            }
+
             {/*//todo add filters*/}
             {/*//todo add sorting*/}
             <div className="links">
+
                 <NavLink className="link" to="/"><House size={22}></House></NavLink>
-                <NavLink className="link" to="/tables">Tabele</NavLink>
+                {authenticated_AdminRole && (
+                    <NavLink className="link" to="/createCoctail"><PlusCircle size={22}/></NavLink>
+                )
+                }
                 <NavLink className="link" to="/about">O nas</NavLink>
+                <NavLink className="link" to="/stats">Statystyki</NavLink>
+
 
             </div>
         </div>

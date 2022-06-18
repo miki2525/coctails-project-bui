@@ -10,6 +10,7 @@ import {useAppCtx} from "./appContextProvider";
 import EditCoctail from "./components/coctail/editCoctail";
 import CreateCoctail from "./components/coctail/createCoctail";
 import Footer from "./components/layout/footer";
+import Stats from "./components/layout/stats";
 
 function App() {
     const {authenticated_AdminRole, setAuthenticated_AdminRole, loading} = useAppCtx();
@@ -36,7 +37,7 @@ function App() {
                     <Route path="/coctail/:id" exact element={<DisplayCoctailDetails/>}/>
                     <Route path="/coctailEdit/:id" exact element={<EditCoctail/>}/>
                     <Route path="/createCoctail" exact element={<CreateCoctail/>}/>
-                    {/*<Route exact path="/tables" element={<Tables/>}/>*/}
+                    <Route exact path="/stats" element={<Stats/>}/>
                     <Route exact path="/about" element={<About/>}/>
                     <Route exact path="/api/adminLogin" element={<AdminLogin/>}/>
 
