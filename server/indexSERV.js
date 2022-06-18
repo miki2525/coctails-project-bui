@@ -176,7 +176,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
-        const writeStream = loadCoctailDataToPDF(__dirname+"/jajo.pdf");
+        const writeStream = loadCoctailDataToPDF(__dirname+"/jajo.pdf", requestedCoctail);
         writeStream.on('finish', function () {
             console.log("FILE CREATED: " + fs.existsSync(__dirname+"/jajo.pdf"))
             let stream = fs.createReadStream(__dirname+"/jajo.pdf");
