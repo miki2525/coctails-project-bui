@@ -4,6 +4,7 @@ import React, {createContext, useState, useContext, useEffect} from 'react';
 
 const AppContext = createContext();
 export const useAppCtx = () => useContext(AppContext);
+const PLATFORM = "https://coctails-project.herokuapp.com/";
 
 export default function AppContextProvider({children}) {
     const [coctails, setCoctails] = useState(''); //reset to ''
@@ -56,7 +57,8 @@ export default function AppContextProvider({children}) {
                 .then(data => {
                     if (data) {
                         setCoctails(data)
-                        window.location.href = "http://localhost:3001/coctail/" + coctailToSave.id;
+                        // window.location.href = "http://localhost:3001/coctail/" + coctailToSave.id;
+                        window.location.href = PLATFORM + "coctail/" + coctailToSave.id;
                     } else {
                         console.log("SERVER ERROR - updateCoctail()");
                     }
@@ -75,7 +77,8 @@ export default function AppContextProvider({children}) {
                 .then(data => {
                     if (data) {
                         setCoctails(data)
-                        window.location.href = "http://localhost:3001/";
+                        // window.location.href = "http://localhost:3001/";
+                        window.location.href = PLATFORM;
                     } else {
                         console.log("SERVER ERROR - saveCoctail()");
                     }
@@ -135,7 +138,8 @@ export default function AppContextProvider({children}) {
                     if (data) {
                         window.alert("USUNIĘTO");
                         setCoctails(data)
-                        window.location.href = "http://localhost:3001/";
+                        // window.location.href = "http://localhost:3001/";
+                        window.location.href = PLATFORM;
                     } else {
                         console.log("SERVER ERROR - deleteCoctail()");
                     }
