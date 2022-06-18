@@ -174,18 +174,20 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
-    console.log(pathToFile)
-    fs.createWriteStream("./plik.pdf").on('error', function (err){
+    let writer = fs.createWriteStream("./plik.pdf").on('error', function (err){
         console.error("ERROR:" + err);
     });
+    writer.write("teskt");
+    writer.end();
     console.log(fs.existsSync("./plik.pdf"));
-    fs.createWriteStream(pathToFile);
+    console.log(__dirname);
+    // fs.createWriteStream(pathToFile);
 
     // if (!fs.existsSync(pathToFile)) {
     //     loadCoctailDataToPDF(pathToFile, requestedCoctail);
     // }
     // let stream = fs.createReadStream(pathToFile);
-    console.log(fs.existsSync(pathToFile));
+    // console.log(fs.existsSync(pathToFile));
     // stream.pipe(res).once("close", function () {
     //     stream.destroy(); // makesure stream closed, not close if download aborted.
     //     deleteFile(pathToFile);
