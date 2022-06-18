@@ -173,16 +173,16 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
-    const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
+    const pathToFile = __dirname + "/" + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
-        const writeStream = loadCoctailDataToPDF(__dirname+"/jajo.pdf", requestedCoctail);
+        const writeStream = loadCoctailDataToPDF(pathToFile, requestedCoctail);
         writeStream.on('finish', function () {
-            console.log("FILE CREATED: " + fs.existsSync(__dirname+"/jajo.pdf"))
-            let stream = fs.createReadStream(__dirname+"/jajo.pdf");
+            console.log("FILE CREATED: " + fs.existsSync(pathToFile))
+            let stream = fs.createReadStream(pathToFile);
             stream.pipe(res).once("close", function () {
                 stream.destroy(); // makesure stream closed, not close if download aborted.
-                deleteFile(__dirname+"/jajo.pdf");
+                deleteFile(pathToFile);
             });
         });
     } else {
