@@ -295,7 +295,8 @@ const deleteFile = (file) => {
 
 const loadCoctailDataToPDF = (pathToFile, coctail) => {
     const doc = new PDFDocument();
-    doc.pipe(fs.createWriteStream(pathToFile));
+    let writer = fs.createWriteStream(pathToFile);
+    doc.pipe(writer);
     // Tittle
     doc
         .fontSize(12)
@@ -351,5 +352,6 @@ const loadCoctailDataToPDF = (pathToFile, coctail) => {
             .moveDown()
             .text(index + 1 + ". " + step);
     })
+    writer.end();
     doc.end();
 }
