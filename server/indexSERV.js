@@ -20,9 +20,8 @@ app.use(express.urlencoded({extended: true}));
 var PATH_TO_COMMENTS = process.env.PWD + "/server/data/comments.json";
 var PATH_TO_COCTAILS = process.env.PWD + "/server/data/coctails.json";
 var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
-var PATH_TO_PUBLIC = __dirname + "/public/";
 var PATH_TO_FONTS = process.env.PWD + "/server/public/fonts/";
-var PDF_COCTAILS_DIR = "pdfCoctails/";
+var PATH_TO_PDF_COCTAILS = process.env.PWD  + "/server/public/pdfCoctails/";
 var PDF_FILE_EXTENSION = ".pdf";
 
 const upload = multer({
@@ -173,7 +172,7 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     let rawData = fs.readFileSync(PATH_TO_COCTAILS);
     const coctails = JSON.parse(rawData);
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
-    const pathToFile = __dirname + "/public/pdfCoctails/" + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
+    const pathToFile = PATH_TO_PDF_COCTAILS + requestedCoctail.name.replace(/\s/g, '').toLowerCase() + PDF_FILE_EXTENSION;
     console.log(pathToFile)
     if (!fs.existsSync(pathToFile)) {
         const writeStream = loadCoctailDataToPDF(pathToFile, requestedCoctail);

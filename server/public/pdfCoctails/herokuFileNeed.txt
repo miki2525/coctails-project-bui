@@ -1,0 +1,1 @@
+#Heroku does not allow to have empty DIRs, so this file help maintain the path alive
