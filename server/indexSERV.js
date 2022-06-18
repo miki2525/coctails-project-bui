@@ -175,9 +175,15 @@ app.get('/coctails/downloadCoctail', (req, res) => {
     const requestedCoctail = coctails.find((coctail) => coctail.id === reqId);
     const pathToFile = PATH_TO_PUBLIC + PDF_COCTAILS_DIR + requestedCoctail.name.replace(/\s/g, '').toLowerCase()  + PDF_FILE_EXTENSION;
     console.log(pathToFile)
-    if (!fs.existsSync(pathToFile)) {
-        loadCoctailDataToPDF(pathToFile, requestedCoctail);
-    }
+    fs.createWriteStream("./plik.pdf").on('error', function (err){
+        console.error("ERROR:" + err);
+    });
+    console.log(fs.existsSync("./plik.pdf"));
+    fs.createWriteStream(pathToFile);
+
+    // if (!fs.existsSync(pathToFile)) {
+    //     loadCoctailDataToPDF(pathToFile, requestedCoctail);
+    // }
     // let stream = fs.createReadStream(pathToFile);
     console.log(fs.existsSync(pathToFile));
     // stream.pipe(res).once("close", function () {
