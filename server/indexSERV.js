@@ -21,7 +21,7 @@ var PATH_TO_COMMENTS = process.env.PWD + "/server/data/comments.json";
 var PATH_TO_COCTAILS = process.env.PWD + "/server/data/coctails.json";
 var PATH_TO_IMAGES = process.env.PWD + "/coctails-frontend/src/data/images";
 var PATH_TO_FONTS = process.env.PWD + "/server/public/fonts/";
-var PATH_TO_PDF_COCTAILS = process.env.PWD  + "/server/public/pdfCoctails/";
+var PATH_TO_PDF_COCTAILS = process.env.PWD + "/server/public/pdfCoctails/";
 var PDF_FILE_EXTENSION = ".pdf";
 
 const upload = multer({
